@@ -16,7 +16,7 @@ def safe_request(
     json_data=None,
     timeout: int = 30,
     max_retries: int = 3,
-    backoff_base: float = 1.5,
+    backoff_base: float = 5,
     retry_statuses: Iterable[int] = (429, 500, 502, 503, 504),
 ) -> Optional[object]:
     """通用带重试的 HTTP 请求。成功(<400)返回 Response，否则返回 None。"""
