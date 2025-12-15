@@ -1,0 +1,21 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+E1-01,GIS栅格/矢量处理与格式,200–450,"GDAL生态、tiling、projection"
+E1-02,遥感预处理（校正/拼接/云检测）,200–450,"calibration、cloud mask、mosaic"
+E1-03,CV任务：分割/检测/分类,250–600,"segmentation/detection toolkits"
+E1-04,时空建模与变化检测,200–450,"time-series、change detection"
+E1-05,数据集/benchmark/评测,150–300,"datasets、leaderboards"
+E1-06,部署与在线推理（开源）,100–250,"serving、pipelines"
+
+E2-01,气候/天气模式与组件,200–450,"models、dynamics cores"
+E2-02,同化工具（EnKF/4DVar等）,150–350,"DA libraries"
+E2-03,后处理/再分析/评估,150–350,"evaluation、regridding"
+E2-04,代理模式/ML天气气候,200–450,"ML surrogates、operator learning"
+E2-05,数据管理与格式（NetCDF/GRIB）,150–300,"parsers、IO libs"
+E2-06,Benchmark与复现,100–250,"metrics、harness"
+
+E3-01,传感器/时间序列采集与清洗,200–450,"IO、QC、异常处理"
+E3-02,预测/预警/异常检测模型,200–450,"forecasting、anomaly detection"
+E3-03,因果分析与干预评估,150–300,"causal inference toolkits"
+E3-04,空间统计与地学分析,150–350,"geostatistics"
+E3-05,可视化与报告,100–250,"dashboards"
+E3-06,Benchmark与复现,100–200,"metrics、datasets"

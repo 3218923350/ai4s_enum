@@ -1,0 +1,14 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+H1-01,DICOM/预处理/标注与格式,200–450,"IO、preprocess、labeling"
+H1-02,分割/检测/分类框架与模型库,250–600,"training/inference toolkits"
+H1-03,Foundation models 与微调,200–450,"pretraining、PEFT"
+H1-04,评测/校准/UQ/鲁棒性,150–350,"calibration、shift detection"
+H1-05,部署/推理/合规脱敏,150–300,"serving、privacy tooling"
+H1-06,数据集与benchmark,150–300,"datasets、metrics"
+
+H2-01,医疗NLP 抽取/标准化（ICD/SNOMED等）,200–450,"NER、normalization、coding"
+H2-02,医疗LLM/微调/对齐,200–450,"medical LLM toolkits"
+H2-03,RAG/证据链/引用溯源,250–600,"retrievers、citation grounding"
+H2-04,脱敏/合规/审计,150–300,"de-id、policy tools"
+H2-05,多模态融合（影像+文本）,150–350,"multimodal models"
+H2-06,评测与安全,150–300,"eval harness、safety checks"

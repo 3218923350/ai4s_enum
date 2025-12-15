@@ -1,0 +1,6 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+X1-01,UQ：贝叶斯/集成/MC dropout等,200–450,"UQ libs、methods"
+X1-02,校准/置信度/选择性预测,150–300,"calibration toolkits"
+X1-03,漂移检测/监控/鲁棒性,150–350,"drift、robustness tools"
+X1-04,可解释性/归因/反事实,200–450,"XAI toolkits"
+X1-05,可信评测与审计,150–300,"auditing、fairness/safety"

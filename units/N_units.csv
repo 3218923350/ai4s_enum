@@ -1,0 +1,14 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+N1-01,预处理/配准/分割,200–450,"pipelines、registration"
+N1-02,连接组构建与图分析,150–350,"tractography、graph tools"
+N1-03,统计建模与群体分析,150–350,"stats toolkits"
+N1-04,AI影像表征与诊断辅助,200–450,"foundation models、UQ"
+N1-05,可视化与交互,100–250,"viewers"
+N1-06,Benchmark与复现,100–200,"metrics"
+
+N2-01,信号预处理/去噪/事件检测,200–450,"filters、event detection"
+N2-02,spike sorting 与特征提取,150–350,"sorting、feature extraction"
+N2-03,解码/BCI（AI）,200–450,"decoding models、online learning"
+N2-04,实时系统与硬件接口,100–250,"streaming、drivers"
+N2-05,可视化与标注,100–250,"GUIs"
+N2-06,Benchmark与复现,100–200,"datasets"

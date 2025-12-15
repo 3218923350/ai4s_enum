@@ -1,0 +1,28 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+C1-01,标准化与标识（SMILES/InChI）,150–300,"canonicalization、parsers、validators"
+C1-02,指纹/embedding/特征工程,200–450,"fingerprints、embeddings、featurizers"
+C1-03,相似检索/向量检索/索引,200–450,"ANN index、chem search engines"
+C1-04,反应/库管理与去重,150–300,"library mgmt、dedup、enumeration"
+C1-05,AI分子表示（foundation/SSL）,200–450,"graph transformers、pretraining kits"
+C1-06,Benchmark/评测与数据集,150–300,"tasks、metrics、leaderboards"
+
+C2-01,QM 求解器与方法实现,250–600,"DFT/ab initio codes、libraries"
+C2-02,输入生成/参数化/批量运行工作流,200–450,"workflow engines、job managers"
+C2-03,输出解析/后处理/可视化,200–450,"parsers、analysis、plotting"
+C2-04,近似/代理/Δ-ML 加速工具,200–450,"ML surrogates、correction models"
+C2-05,基准/验证/误差分析,150–300,"benchmark suites、metrics"
+C2-06,HPC与可复现（容器/环境）,150–300,"containers、build systems、CI"
+
+C3-01,反应数据清洗/标准化/模板提取,200–450,"rxn parsers、atom-mapping、templates"
+C3-02,反应预测模型（forward）,200–450,"transformers、GNN、toolkits"
+C3-03,逆合成规划与搜索,200–450,"planners、search algorithms"
+C3-04,可行性/条件推荐/路线评估,150–350,"condition prediction、route scoring"
+C3-05,检索增强与知识库（专利/文献）,200–450,"retrievers、RAG、evidence tools"
+C3-06,Benchmark与复现套件,150–300,"datasets、metrics、leaderboards"
+
+C4-01,谱图预处理/峰检测/去噪,200–450,"peak picking、baseline、denoise"
+C4-02,MS 鉴定/定量与库搜索,200–500,"MS search、identification、quant"
+C4-03,NMR 指认/结构解析,150–350,"NMR analysis、assignment"
+C4-04,IR/Raman 等光谱解析,150–300,"vibrational analysis tools"
+C4-05,AI谱学识别与生成拟合,150–350,"DL classifiers、generative fitting"
+C4-06,可视化/报告/工作流,100–250,"GUIs、pipelines"

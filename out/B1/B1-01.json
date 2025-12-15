@@ -1,0 +1,1386 @@
+{
+  "generated_at": "2025-12-15T17:24:47.338640+08:00",
+  "metadata": {
+    "leaf_cluster": {
+      "leaf_cluster_id": "B1",
+      "leaf_cluster_name": "生信-序列分析与注释生态",
+      "domain": "Bioinfo/Genomics",
+      "typical_objects": "FASTA/FASTQ, reads, alignments",
+      "task_chain": "采集/解析→QC→比对/组装→注释→评测→工作流",
+      "tool_form": "CLI + C/C++库 + workflow模块"
+    },
+    "unit": {
+      "unit_id": "B1-01",
+      "unit_name": "FASTQ/FASTA 解析与质量控制",
+      "target_scale": "200–450",
+      "coverage_tools": "读写解析、trim/filter、QC报告、污染检测"
+    },
+    "search": {
+      "target_candidates": 450,
+      "queries": [
+        "[GH] BBTools",
+        "[GH] FastQ Screen",
+        "[GH] Trim Galore",
+        "[GH] SeqKit",
+        "[GH] fastp",
+        "[GH] Cutadapt",
+        "[GH] Trimmomatic",
+        "[GH] MultiQC",
+        "[GH] FastQC",
+        "[GH] fastq parser",
+        "[GH] fasta parser",
+        "[GH] fastq quality control",
+        "[GH] read trimming",
+        "[GH] adapter removal",
+        "[GH] sequence quality control",
+        "[GH] fastq filter",
+        "[GH] ngs quality control",
+        "[GH] bioinformatics qc",
+        "[GH] read preprocessing",
+        "[GH] contamination detection",
+        "[GH] fastq processing",
+        "[GH] adapter trimmer",
+        "[WEB] fastq quality control tools github",
+        "[WEB] best fastq trimmer adapter removal github",
+        "[WEB] ngs read preprocessing workflow github",
+        "[WEB] fastq contamination detection github",
+        "[WEB] awesome bioinformatics quality control github"
+      ],
+      "total_candidates": 1062,
+      "tool_candidates": 100,
+      "final_tools": 51
+    }
+  },
+  "tools": [
+    {
+      "name": "pairsqc",
+      "one_line_profile": "Quality control report generator for Hi-C pairs files",
+      "detailed_description": "A tool developed by the 4DN DCIC to generate comprehensive quality control reports for Hi-C pairs files, facilitating the assessment of chromatin conformation capture data integrity and quality.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "qc_report"
+      ],
+      "application_level": "solver",
+      "primary_language": "HTML",
+      "repo_url": "https://github.com/4dn-dcic/pairsqc",
+      "help_website": [
+        "https://github.com/4dn-dcic/pairsqc"
+      ],
+      "license": "MIT",
+      "tags": [
+        "hi-c",
+        "quality-control",
+        "genomics",
+        "bioinformatics"
+      ],
+      "id": 1
+    },
+    {
+      "name": "SOAPnuke",
+      "one_line_profile": "Integrated quality control and preprocessing tool for NGS data",
+      "detailed_description": "A C++ tool developed by BGI for integrated quality control and preprocessing of high-throughput sequencing data (FASTQ, BAM, CRAM). It supports trimming, filtering, and statistical analysis to ensure data quality for downstream analysis.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "preprocessing",
+        "filtering"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/BGI-flexlab/SOAPnuke",
+      "help_website": [
+        "https://github.com/BGI-flexlab/SOAPnuke"
+      ],
+      "license": "GPL-3.0",
+      "tags": [
+        "fastq",
+        "bam",
+        "quality-control",
+        "ngs",
+        "preprocessing"
+      ],
+      "id": 2
+    },
+    {
+      "name": "SeqFilter",
+      "one_line_profile": "Versatile FASTA/FASTQ sequence file analysis and modification tool",
+      "detailed_description": "A Perl-based command-line utility for analyzing, filtering, and modifying biological sequence files in FASTA or FASTQ format. It is designed for flexibility in bioinformatics pipelines.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "filtering",
+        "sequence_manipulation"
+      ],
+      "application_level": "solver",
+      "primary_language": "Perl",
+      "repo_url": "https://github.com/BioInf-Wuerzburg/SeqFilter",
+      "help_website": [
+        "https://github.com/BioInf-Wuerzburg/SeqFilter"
+      ],
+      "license": "MIT",
+      "tags": [
+        "fasta",
+        "fastq",
+        "filtering",
+        "bioinformatics"
+      ],
+      "id": 3
+    },
+    {
+      "name": "FASTX.jl",
+      "one_line_profile": "High-performance parsing of FASTA and FASTQ files in Julia",
+      "detailed_description": "A core library in the BioJulia ecosystem for efficient parsing, writing, and processing of FASTA and FASTQ formatted biological sequence files, enabling high-performance bioinformatics analysis in Julia.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "parsing",
+        "io"
+      ],
+      "application_level": "library",
+      "primary_language": "Julia",
+      "repo_url": "https://github.com/BioJulia/FASTX.jl",
+      "help_website": [
+        "https://biojulia.dev/FASTX.jl/stable/"
+      ],
+      "license": "MIT",
+      "tags": [
+        "julia",
+        "bioinformatics",
+        "fasta",
+        "fastq",
+        "parsing"
+      ],
+      "id": 4
+    },
+    {
+      "name": "SanitizeMe",
+      "one_line_profile": "Host contamination removal tool for sequencing data",
+      "detailed_description": "A tool developed by the CDC to remove host contaminants from sequencing files, ensuring privacy and data cleanliness for downstream analysis.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "contamination_removal",
+        "read_filtering"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/CDCgov/SanitizeMe",
+      "help_website": [],
+      "license": "Apache-2.0",
+      "tags": [
+        "contamination-removal",
+        "fastq",
+        "sequencing"
+      ],
+      "id": 5
+    },
+    {
+      "name": "mim",
+      "one_line_profile": "Auxiliary index for accelerating parallel FASTQ parsing",
+      "detailed_description": "A small, auxiliary index structure designed to massively improve the performance of parallel FASTQ parsing, developed by the COMBINE lab.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "fastq_parsing",
+        "indexing"
+      ],
+      "application_level": "library",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/COMBINE-lab/mim",
+      "help_website": [],
+      "license": "BSD-3-Clause",
+      "tags": [
+        "fastq",
+        "parsing",
+        "performance"
+      ],
+      "id": 6
+    },
+    {
+      "name": "UMICollapse",
+      "one_line_profile": "Fast deduplication and collapsing for UMI-tagged reads",
+      "detailed_description": "A tool for accelerating the deduplication and collapsing process for reads with Unique Molecular Identifiers (UMI), optimized for scalability and speed.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "umi_deduplication",
+        "read_collapsing"
+      ],
+      "application_level": "solver",
+      "primary_language": "Java",
+      "repo_url": "https://github.com/Daniel-Liu-c0deb0t/UMICollapse",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "umi",
+        "deduplication",
+        "ngs"
+      ],
+      "id": 7
+    },
+    {
+      "name": "daylily-ephemeral-cluster",
+      "one_line_profile": "Automated cloud-based NGS analysis framework for WGS data",
+      "detailed_description": "An NGS analysis framework that automates the provisioning of AWS EC2 spot instances to process FASTQ data into snvVCFs efficiently and cost-effectively.",
+      "domains": [
+        "B1",
+        "B1-04"
+      ],
+      "subtask_category": [
+        "workflow_automation",
+        "variant_calling"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/Daylily-Informatics/daylily-ephemeral-cluster",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "cloud-computing",
+        "aws",
+        "wgs",
+        "pipeline"
+      ],
+      "id": 8
+    },
+    {
+      "name": "human_genomics_pipeline",
+      "one_line_profile": "Snakemake workflow for Illumina WGS/WES data processing",
+      "detailed_description": "A Snakemake workflow developed by ESR-NZ to process single samples or cohorts of Illumina paired-end sequencing data using standard tools like Trim Galore, BWA, and GATK.",
+      "domains": [
+        "B1",
+        "B1-04"
+      ],
+      "subtask_category": [
+        "workflow_management",
+        "variant_calling",
+        "trimming"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/ESR-NZ/human_genomics_pipeline",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "snakemake",
+        "wgs",
+        "wes",
+        "pipeline"
+      ],
+      "id": 9
+    },
+    {
+      "name": "Trim Galore!",
+      "one_line_profile": "Wrapper for Cutadapt and FastQC for consistent adapter and quality trimming",
+      "detailed_description": "A wrapper script to automate quality and adapter trimming as well as quality control, with added functionality for RRBS data.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "adapter_trimming",
+        "quality_control"
+      ],
+      "application_level": "solver",
+      "primary_language": "Perl",
+      "repo_url": "https://github.com/FelixKrueger/TrimGalore",
+      "help_website": [
+        "https://github.com/FelixKrueger/TrimGalore/blob/master/Docs/Trim_Galore_User_Guide.md"
+      ],
+      "license": "GPL-3.0",
+      "tags": [
+        "trimming",
+        "qc",
+        "ngs",
+        "rrbs"
+      ],
+      "id": 10
+    },
+    {
+      "name": "filter-fastq",
+      "one_line_profile": "Utility to filter FASTQ reads by identifier list",
+      "detailed_description": "A Python utility from Floor Lab to filter reads from a FASTQ file based on a provided list of identifiers.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "read_filtering"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/Floor-Lab/filter-fastq",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "fastq",
+        "filtering",
+        "utility"
+      ],
+      "id": 11
+    },
+    {
+      "name": "ssvQC",
+      "one_line_profile": "R package for quality control of enrichment-based NGS assays (ChIP-seq, ATAC-seq)",
+      "detailed_description": "A quality control tool designed for enrichment-based Next-Generation Sequencing (NGS) data, such as ChIP-seq, CUT&RUN, and ATAC-seq. It provides metrics and visualizations to assess the quality of sequencing libraries and enrichment efficiency.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "ngs_analysis"
+      ],
+      "application_level": "library",
+      "primary_language": "R",
+      "repo_url": "https://github.com/FrietzeLabUVM/ssvQC",
+      "help_website": [],
+      "license": "NOASSERTION",
+      "tags": [
+        "chip-seq",
+        "atac-seq",
+        "quality-control",
+        "r-package"
+      ],
+      "id": 12
+    },
+    {
+      "name": "gps-pipeline",
+      "one_line_profile": "Nextflow pipeline for processing Streptococcus pneumoniae sequencing data",
+      "detailed_description": "A bioinformatics pipeline developed by the Global Pneumococcal Sequencing Project for processing raw FASTQ reads of Streptococcus pneumoniae. It handles read processing, quality control, and downstream analysis steps in a reproducible Nextflow workflow.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "workflow_management",
+        "read_processing",
+        "quality_control"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Nextflow",
+      "repo_url": "https://github.com/GlobalPneumoSeq/gps-pipeline",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "nextflow",
+        "bacteria",
+        "genomics",
+        "pipeline"
+      ],
+      "id": 13
+    },
+    {
+      "name": "dropSeqPipe",
+      "one_line_profile": "Snakemake workflow for Single-Cell RNA-Seq pre-processing",
+      "detailed_description": "A Snakemake-based workflow for the pre-processing of Single-Cell RNA-Seq data (Drop-Seq). It automates the steps from raw reads to expression matrices, including quality control, alignment, and quantification.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "scRNA-seq",
+        "read_processing",
+        "workflow_management"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/Hoohm/dropSeqPipe",
+      "help_website": [],
+      "license": "CC-BY-SA-4.0",
+      "tags": [
+        "snakemake",
+        "single-cell",
+        "rna-seq",
+        "preprocessing"
+      ],
+      "id": 14
+    },
+    {
+      "name": "TGSFilter",
+      "one_line_profile": "Ultra-fast tool for filtering and trimming long sequencing reads",
+      "detailed_description": "An efficient C++ tool designed for the quality control of Third Generation Sequencing (TGS) long reads. It performs rapid filtering and trimming to remove low-quality data and adapters from long-read datasets.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "read_filtering",
+        "read_trimming",
+        "quality_control"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/HuiyangYu/TGSFilter",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "long-reads",
+        "tgs",
+        "filtering",
+        "trimming"
+      ],
+      "id": 15
+    },
+    {
+      "name": "fastprop",
+      "one_line_profile": "Molecular property prediction framework using descriptor-based learning",
+      "detailed_description": "A machine learning tool for predicting molecular properties. It utilizes the mordredcommunity library for descriptor calculation and provides a fast, efficient interface for training models on chemical datasets, suitable for drug discovery and cheminformatics tasks.",
+      "domains": [
+        "Chemistry",
+        "Cheminformatics"
+      ],
+      "subtask_category": [
+        "molecular_property_prediction",
+        "qsar"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/JacksonBurns/fastprop",
+      "help_website": [
+        "https://jacksonburns.github.io/fastprop/"
+      ],
+      "license": "MIT",
+      "tags": [
+        "molecular-properties",
+        "machine-learning",
+        "cheminformatics",
+        "drug-discovery"
+      ],
+      "id": 16
+    },
+    {
+      "name": "SumStatsRehab",
+      "one_line_profile": "Quality control tool for GWAS summary statistics files",
+      "detailed_description": "A tool designed to perform quality control on GWAS summary statistics files, ensuring data integrity for downstream analysis.",
+      "domains": [
+        "Bioinformatics",
+        "Genomics"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "data_processing"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/Kukuster/SumStatsRehab",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "gwas",
+        "summary-statistics",
+        "quality-control"
+      ],
+      "id": 17
+    },
+    {
+      "name": "fastq-filter",
+      "one_line_profile": "High-performance FASTQ filtering program",
+      "detailed_description": "A fast, C-based command-line tool for filtering FASTQ files based on quality scores and other metrics, developed by LUMC.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "filtering",
+        "quality_control"
+      ],
+      "application_level": "solver",
+      "primary_language": "C",
+      "repo_url": "https://github.com/LUMC/fastq-filter",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "fastq",
+        "filtering",
+        "ngs",
+        "bioinformatics"
+      ],
+      "id": 18
+    },
+    {
+      "name": "seqparse",
+      "one_line_profile": "Library for parsing biological sequence files and accession IDs",
+      "detailed_description": "A TypeScript library for parsing various sequence file formats (GenBank, FASTA, SnapGene, SBOL) and accession IDs into a common format, developed by Lattice Automation.",
+      "domains": [
+        "B1",
+        "B1-01",
+        "Synthetic Biology"
+      ],
+      "subtask_category": [
+        "parsing",
+        "data_conversion"
+      ],
+      "application_level": "library",
+      "primary_language": "TypeScript",
+      "repo_url": "https://github.com/Lattice-Automation/seqparse",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "fasta",
+        "genbank",
+        "parsing",
+        "sbol"
+      ],
+      "id": 19
+    },
+    {
+      "name": "AdapterRemoval",
+      "one_line_profile": "Rapid adapter trimming, identification, and read merging tool for NGS data",
+      "detailed_description": "AdapterRemoval v2 is a flexible tool for trimming adapter sequences from High-Throughput Sequencing (HTS) data. It handles both single-end and paired-end reads, performs quality trimming, and can merge overlapping paired-end reads into consensus sequences.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "adapter_trimming",
+        "read_merging",
+        "quality_control"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/MikkelSchubert/adapterremoval",
+      "help_website": [
+        "https://adapterremoval.readthedocs.io/en/latest/"
+      ],
+      "license": "GPL-3.0",
+      "tags": [
+        "fastq",
+        "trimming",
+        "ngs",
+        "adapter-removal"
+      ],
+      "id": 20
+    },
+    {
+      "name": "MegaQC",
+      "one_line_profile": "Web application for aggregating and visualising MultiQC reports longitudinally",
+      "detailed_description": "MegaQC is a web-based platform designed to collect, store, and visualize data from multiple MultiQC runs. It enables longitudinal analysis of quality control metrics across different projects, samples, and time, facilitating system-wide performance monitoring.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "data_visualization",
+        "qc_monitoring"
+      ],
+      "application_level": "platform",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/MultiQC/MegaQC",
+      "help_website": [
+        "https://megaqc.info/"
+      ],
+      "license": "GPL-3.0",
+      "tags": [
+        "multiqc",
+        "dashboard",
+        "quality-control",
+        "web-app"
+      ],
+      "id": 21
+    },
+    {
+      "name": "MultiQC",
+      "one_line_profile": "Aggregate bioinformatics analysis results into a single interactive report",
+      "detailed_description": "MultiQC searches a given directory for analysis logs and compiles a HTML report. It's a general use tool, perfect for summarizing the output from numerous bioinformatics tools (e.g., FastQC, Cutadapt, BWA, STAR) across many samples.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "qc_report",
+        "data_aggregation"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/MultiQC/MultiQC",
+      "help_website": [
+        "https://multiqc.info/"
+      ],
+      "license": "GPL-3.0",
+      "tags": [
+        "reporting",
+        "quality-control",
+        "bioinformatics",
+        "visualization"
+      ],
+      "id": 22
+    },
+    {
+      "name": "MultiQC_SAV",
+      "one_line_profile": "MultiQC plugin for Illumina Sequencing Analysis Viewer (SAV) data",
+      "detailed_description": "A plugin for MultiQC that parses and visualizes InterOp metrics from Illumina sequencing runs, replicating plots and tables found in the Illumina Sequencing Analysis Viewer (SAV).",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "sequencing_metrics"
+      ],
+      "application_level": "library",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/MultiQC/MultiQC_SAV",
+      "help_website": [
+        "https://github.com/MultiQC/MultiQC_SAV"
+      ],
+      "license": "MIT",
+      "tags": [
+        "illumina",
+        "sav",
+        "multiqc-plugin",
+        "sequencing-quality"
+      ],
+      "id": 23
+    },
+    {
+      "name": "MultiQC_bcbio",
+      "one_line_profile": "MultiQC plugin for the bcbio-nextgen pipeline",
+      "detailed_description": "A plugin for MultiQC that extends its functionality to parse and report specific metrics generated by the bcbio-nextgen bioinformatics analysis pipeline.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "pipeline_reporting"
+      ],
+      "application_level": "library",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/MultiQC/MultiQC_bcbio",
+      "help_website": [
+        "https://github.com/MultiQC/MultiQC_bcbio"
+      ],
+      "license": "MIT",
+      "tags": [
+        "bcbio",
+        "multiqc-plugin",
+        "pipeline-metrics"
+      ],
+      "id": 24
+    },
+    {
+      "name": "ConFindr",
+      "one_line_profile": "Pipeline for detecting intra-species bacterial contamination in sequencing data",
+      "detailed_description": "ConFindr is a bioinformatics pipeline designed to detect contamination in bacterial next-generation sequencing (NGS) data. It works by identifying the presence of multiple alleles of core genes, allowing for the identification of intra-species contamination which is often missed by other tools.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "contamination_detection",
+        "quality_control"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/OLC-Bioinformatics/ConFindr",
+      "help_website": [
+        "https://github.com/OLC-Bioinformatics/ConFindr"
+      ],
+      "license": "MIT",
+      "tags": [
+        "contamination-detection",
+        "bacteria",
+        "ngs",
+        "quality-control"
+      ],
+      "id": 25
+    },
+    {
+      "name": "AfterQC",
+      "one_line_profile": "Automatic quality control, filtering, trimming, and error removal for FASTQ data",
+      "detailed_description": "AfterQC is a tool for automatic quality control of FASTQ data. It performs filtering, trimming, and error removal, and attempts to correct sequencing errors by analyzing overlapping paired-end reads. It generates HTML reports and is designed to be simple to use with minimal configuration.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "read_trimming",
+        "error_correction"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/OpenGene/AfterQC",
+      "help_website": [
+        "https://github.com/OpenGene/AfterQC"
+      ],
+      "license": "MIT",
+      "tags": [
+        "fastq",
+        "quality-control",
+        "trimming",
+        "ngs"
+      ],
+      "id": 26
+    },
+    {
+      "name": "fastp",
+      "one_line_profile": "Ultra-fast all-in-one FASTQ preprocessor for QC, trimming, and filtering",
+      "detailed_description": "fastp is an ultra-fast FASTQ preprocessor that provides comprehensive quality control, adapter trimming, quality filtering, per-read cutting, and splitting/merging functions. It is designed to be much faster than Trimmomatic or Cutadapt and produces JSON/HTML reports.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "adapter_trimming",
+        "read_filtering",
+        "preprocessing"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/OpenGene/fastp",
+      "help_website": [
+        "https://github.com/OpenGene/fastp"
+      ],
+      "license": "MIT",
+      "tags": [
+        "fastq",
+        "quality-control",
+        "adapter-trimming",
+        "high-performance"
+      ],
+      "id": 27
+    },
+    {
+      "name": "fastplong",
+      "one_line_profile": "Preprocessing and quality control tool for long-read sequencing data",
+      "detailed_description": "fastplong is a tool derived from fastp, specifically optimized for long-read sequencing data (e.g., Nanopore, PacBio). It provides high-performance preprocessing, quality control, and filtering capabilities tailored to the characteristics of long reads.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "long_read_processing",
+        "filtering"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/OpenGene/fastplong",
+      "help_website": [
+        "https://github.com/OpenGene/fastplong"
+      ],
+      "license": "MIT",
+      "tags": [
+        "long-read",
+        "nanopore",
+        "pacbio",
+        "quality-control"
+      ],
+      "id": 28
+    },
+    {
+      "name": "rnaseq-pipeline",
+      "one_line_profile": "RNA-seq data processing pipeline for alignment and quantification",
+      "detailed_description": "A comprehensive RNA-seq pipeline developed by Pavlidis Lab that handles raw sequence alignment and transcript/gene quantification, designed for reproducibility in gene expression analysis.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "workflow_management",
+        "alignment",
+        "quantification"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/PavlidisLab/rnaseq-pipeline",
+      "help_website": [],
+      "license": "Unlicense",
+      "tags": [
+        "rna-seq",
+        "pipeline",
+        "quantification",
+        "alignment"
+      ],
+      "id": 29
+    },
+    {
+      "name": "SARS2seq",
+      "one_line_profile": "Pipeline for SARS-CoV-2 genome consensus generation from targeted sequencing",
+      "detailed_description": "A bioinformatics pipeline designed to process raw FastQ data from targeted SARS-CoV-2 sequencing. It performs quality control, alignment, and generates biologically correct consensus sequences of the SARS-CoV-2 genome.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "variant_calling",
+        "consensus_generation",
+        "quality_control"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/RIVM-bioinformatics/SARS2seq",
+      "help_website": [],
+      "license": "AGPL-3.0",
+      "tags": [
+        "sars-cov-2",
+        "pipeline",
+        "consensus-sequence",
+        "fastq"
+      ],
+      "id": 30
+    },
+    {
+      "name": "ViroConstrictor",
+      "one_line_profile": "Viral amplicon-based sequencing pipeline for consensus generation",
+      "detailed_description": "A pipeline designed to process raw FastQ data from viral amplicon-based sequencing (e.g., generic viral genomes) to generate biologically correct consensus sequences, developed by RIVM.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "consensus_generation",
+        "quality_control",
+        "amplicon_sequencing"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/RIVM-bioinformatics/ViroConstrictor",
+      "help_website": [],
+      "license": "AGPL-3.0",
+      "tags": [
+        "virology",
+        "pipeline",
+        "consensus",
+        "amplicon"
+      ],
+      "id": 31
+    },
+    {
+      "name": "grepq",
+      "one_line_profile": "High-performance FASTQ filtering tool using regex patterns",
+      "detailed_description": "A command-line tool written in Rust designed to quickly filter FASTQ files by matching sequences against a set of regular expression patterns, offering high-speed processing for large sequencing datasets.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "filtering",
+        "sequence_search"
+      ],
+      "application_level": "solver",
+      "primary_language": "Rust",
+      "repo_url": "https://github.com/Rbfinch/grepq",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "fastq",
+        "filtering",
+        "regex",
+        "rust"
+      ],
+      "id": 32
+    },
+    {
+      "name": "NGSTroubleFinder",
+      "one_line_profile": "Tool for detecting contamination and kinship in human NGS data",
+      "detailed_description": "A bioinformatics tool for the detection and quantification of sample contamination and kinship relationships across human Next-Generation Sequencing (NGS) data, aiding in quality control and data integrity verification.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "contamination_detection",
+        "kinship_analysis"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/STALICLA-RnD/NGSTroubleFinder",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "ngs",
+        "contamination",
+        "quality-control",
+        "kinship"
+      ],
+      "id": 33
+    },
+    {
+      "name": "SegataLab Preprocessing",
+      "one_line_profile": "Metagenomic reads pre-processing workflow for trimming and decontamination",
+      "detailed_description": "A set of tools and scripts from SegataLab for pre-processing raw metagenomic sequence reads, including adapter trimming, quality control, and removal of host contamination.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "trimming",
+        "decontamination"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/SegataLab/preprocessing",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "metagenomics",
+        "preprocessing",
+        "quality-control",
+        "trimming"
+      ],
+      "id": 34
+    },
+    {
+      "name": "FastQ Screen",
+      "one_line_profile": "Contamination screening tool for NGS data against multiple genomes",
+      "detailed_description": "A popular quality control tool that allows users to screen a library of sequences in FastQ format against a set of sequence databases so that the composition of the library can be assessed, useful for detecting contamination.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "contamination_detection",
+        "screening"
+      ],
+      "application_level": "solver",
+      "primary_language": "Perl",
+      "repo_url": "https://github.com/StevenWingett/FastQ-Screen",
+      "help_website": [
+        "https://www.bioinformatics.babraham.ac.uk/projects/fastq_screen/"
+      ],
+      "license": "GPL-3.0",
+      "tags": [
+        "fastq",
+        "contamination",
+        "quality-control",
+        "ngs"
+      ],
+      "id": 35
+    },
+    {
+      "name": "NGS_data_processing",
+      "one_line_profile": "Collection of Perl scripts for processing FASTA/FASTQ and table data",
+      "detailed_description": "A toolkit containing various Perl scripts for handling and processing Next-Generation Sequencing data formats (FASTA, FASTQ) and tabular data, providing utilities for format conversion and data manipulation.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "data_processing",
+        "format_conversion"
+      ],
+      "application_level": "library",
+      "primary_language": "Perl",
+      "repo_url": "https://github.com/Sunhh/NGS_data_processing",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "perl",
+        "scripts",
+        "fastq",
+        "fasta",
+        "data-processing"
+      ],
+      "id": 36
+    },
+    {
+      "name": "Fastq-to-BAM",
+      "one_line_profile": "Optimised pipeline for WGS data processing from FASTQ to BAM",
+      "detailed_description": "An optimised pipeline designed to process whole genome sequence data, converting FASTQ files to BAM format, specifically tailored for high-performance computing environments like NCI Gadi.",
+      "domains": [
+        "B1",
+        "B1-01",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "alignment",
+        "data_processing"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Shell",
+      "repo_url": "https://github.com/Sydney-Informatics-Hub/Fastq-to-BAM",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "fastq",
+        "bam",
+        "wgs",
+        "pipeline"
+      ],
+      "id": 37
+    },
+    {
+      "name": "FilterBanks_FastPythonImplementation",
+      "one_line_profile": "Fast Python implementation of filter banks for signal processing",
+      "detailed_description": "A Python library providing efficient implementations of filter banks, which are essential for feature extraction and spectral analysis in signal processing and audio analysis tasks.",
+      "domains": [
+        "Signal_Processing"
+      ],
+      "subtask_category": [
+        "signal_processing",
+        "feature_extraction"
+      ],
+      "application_level": "library",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/TUIlmenauAMS/FilterBanks_FastPythonImplementation",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "filter-banks",
+        "signal-processing",
+        "audio"
+      ],
+      "id": 38
+    },
+    {
+      "name": "smos",
+      "one_line_profile": "Preprocessing tools for SMOS soil moisture data",
+      "detailed_description": "A Python toolkit for downloading, reading, and converting time series data from the SMOS (Soil Moisture and Ocean Salinity) satellite mission, facilitating earth science research.",
+      "domains": [
+        "Earth_Science"
+      ],
+      "subtask_category": [
+        "data_preprocessing",
+        "data_access"
+      ],
+      "application_level": "library",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/TUW-GEO/smos",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "smos",
+        "soil-moisture",
+        "remote-sensing"
+      ],
+      "id": 39
+    },
+    {
+      "name": "ve-sequence-parsers",
+      "one_line_profile": "Parsers for converting biological sequence formats to JSON",
+      "detailed_description": "A library to parse and convert various biological sequence formats (GenBank, FASTA, SBOL) into JSON format and vice versa, facilitating data interoperability in synthetic biology and bioinformatics.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "parsing",
+        "format_conversion"
+      ],
+      "application_level": "library",
+      "primary_language": "JavaScript",
+      "repo_url": "https://github.com/TeselaGen/ve-sequence-parsers-DEPRECATED",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "genbank",
+        "fasta",
+        "sbol",
+        "parser"
+      ],
+      "id": 40
+    },
+    {
+      "name": "mpc_track_fastplanner",
+      "one_line_profile": "Nonlinear MPC tracking for omnidirectional mobile robots",
+      "detailed_description": "A control framework for omnidirectional mobile robots that utilizes nonlinear Model Predictive Control (MPC) to track local trajectories generated by a fast planner, applicable in robotics research.",
+      "domains": [
+        "Robotics"
+      ],
+      "subtask_category": [
+        "motion_control",
+        "trajectory_tracking"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/USE-jx/mpc_track_fastplanner",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "mpc",
+        "robotics",
+        "trajectory-tracking"
+      ],
+      "id": 41
+    },
+    {
+      "name": "RiboSeq_pipeline",
+      "one_line_profile": "Pipeline for processing RiboSeq FASTQ data",
+      "detailed_description": "A bioinformatics pipeline designed to process RiboSeq sequencing data, handling tasks from raw FASTQ files to downstream analysis formats.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "pipeline",
+        "data_processing"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/WhiteLab/RiboSeq_pipeline",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "riboseq",
+        "fastq",
+        "pipeline"
+      ],
+      "id": 42
+    },
+    {
+      "name": "scCDC",
+      "one_line_profile": "Single-cell contamination detection and correction tool",
+      "detailed_description": "A computational tool for detecting and correcting contamination in single-cell sequencing data, improving the quality of downstream analysis.",
+      "domains": [
+        "B1",
+        "B1-04"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "contamination_detection"
+      ],
+      "application_level": "solver",
+      "primary_language": "R",
+      "repo_url": "https://github.com/ZJU-UoE-CCW-LAB/scCDC",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "single-cell",
+        "quality-control",
+        "contamination"
+      ],
+      "id": 43
+    },
+    {
+      "name": "FASTX-Toolkit",
+      "one_line_profile": "A collection of command line tools for Short-Reads FASTA/FASTQ files preprocessing",
+      "detailed_description": "The FASTX-Toolkit is a collection of command line tools for Short-Reads FASTA/FASTQ files preprocessing. It performs tasks such as quality filtering, trimming, clipping adapters, and converting between formats, widely used in NGS data analysis pipelines.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "trimming",
+        "filtering",
+        "format_conversion"
+      ],
+      "application_level": "solver",
+      "primary_language": "C",
+      "repo_url": "https://github.com/agordon/fastx_toolkit",
+      "help_website": [
+        "http://hannonlab.cshl.edu/fastx_toolkit/"
+      ],
+      "license": "AGPL-3.0",
+      "tags": [
+        "fastq",
+        "fasta",
+        "preprocessing",
+        "ngs",
+        "cli"
+      ],
+      "id": 44
+    },
+    {
+      "name": "faster",
+      "one_line_profile": "High-performance tool for computing FASTQ file statistics and quality metrics",
+      "detailed_description": "Faster is a command-line tool written in Rust designed to rapidly calculate statistics and quality metrics for FASTQ files. It provides essential metadata and QC information efficiently, suitable for quick inspection of sequencing data.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "statistics",
+        "data_inspection"
+      ],
+      "application_level": "solver",
+      "primary_language": "Rust",
+      "repo_url": "https://github.com/angelovangel/faster",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "fastq",
+        "statistics",
+        "rust",
+        "quality-control"
+      ],
+      "id": 45
+    },
+    {
+      "name": "seqkit (Rust)",
+      "one_line_profile": "Rust-based toolkit for manipulating FASTA and SAM files",
+      "detailed_description": "A command-line toolkit written in Rust for processing and manipulating biological sequence files (FASTA) and alignment files (SAM), offering functionality for filtering, converting, and summarizing sequence data.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "sequence_manipulation",
+        "file_conversion"
+      ],
+      "application_level": "solver",
+      "primary_language": "Rust",
+      "repo_url": "https://github.com/annalam/seqkit",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "fasta",
+        "sam",
+        "rust",
+        "sequence-manipulation"
+      ],
+      "id": 46
+    },
+    {
+      "name": "hichipper",
+      "one_line_profile": "Preprocessing and QC pipeline for HiChIP data",
+      "detailed_description": "A data processing pipeline designed specifically for HiChIP data, handling restriction fragment processing, read mapping, and quality control to facilitate downstream chromatin conformation analysis.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "preprocessing",
+        "hichip_analysis"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/aryeelab/hichipper",
+      "help_website": [
+        "http://hichipper.readthedocs.io"
+      ],
+      "license": "MIT",
+      "tags": [
+        "hichip",
+        "quality-control",
+        "pipeline",
+        "chromatin"
+      ],
+      "id": 47
+    },
+    {
+      "name": "umi",
+      "one_line_profile": "Tools for processing Unique Molecular Identifiers (UMI) in sequencing reads",
+      "detailed_description": "A set of preprocessing tools for handling Unique Molecular Identifiers (UMIs) in NGS data, enabling accurate deduplication and error correction in sequencing reads.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "umi_processing",
+        "deduplication",
+        "quality_control"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/aryeelab/umi",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "umi",
+        "ngs",
+        "preprocessing",
+        "deduplication"
+      ],
+      "id": 48
+    },
+    {
+      "name": "fastqc-viz",
+      "one_line_profile": "Visualization tool for enhancing FastQC reports",
+      "detailed_description": "An R-based utility that provides a redesigned and enhanced visualization layer for standard FastQC reports, making quality control metrics easier to interpret.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "visualization",
+        "qc_report"
+      ],
+      "application_level": "solver",
+      "primary_language": "R",
+      "repo_url": "https://github.com/barreiro-r/fastqc-viz",
+      "help_website": [],
+      "license": "NOASSERTION",
+      "tags": [
+        "fastqc",
+        "visualization",
+        "r",
+        "quality-control"
+      ],
+      "id": 49
+    },
+    {
+      "name": "BBTools",
+      "one_line_profile": "Comprehensive suite of high-performance tools for DNA/RNA sequence analysis",
+      "detailed_description": "A suite of fast, multithreaded bioinformatics tools for genomics and transcriptomics, including the BBMap aligner, BBDuk for trimming/filtering, and numerous utilities for sequence manipulation and quality control.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "alignment",
+        "sequence_manipulation",
+        "trimming"
+      ],
+      "application_level": "solver",
+      "primary_language": "Java",
+      "repo_url": "https://github.com/bbushnell/BBTools",
+      "help_website": [
+        "https://jgi.doe.gov/data-and-tools/bbtools/"
+      ],
+      "license": "NOASSERTION",
+      "tags": [
+        "genomics",
+        "alignment",
+        "quality-control",
+        "trimming"
+      ],
+      "id": 50
+    },
+    {
+      "name": "CpG_Me",
+      "one_line_profile": "WGBS pipeline for alignment and QC of DNA methylation data",
+      "detailed_description": "A Whole Genome Bisulfite Sequencing (WGBS) pipeline that automates the process from raw FastQ reads to CpG count matrices, incorporating alignment and quality control steps specifically for methylation analysis.",
+      "domains": [
+        "B1",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "methylation_calling",
+        "quality_control",
+        "alignment"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Shell",
+      "repo_url": "https://github.com/ben-laufer/CpG_Me",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "wgbs",
+        "methylation",
+        "pipeline",
+        "quality-control"
+      ],
+      "id": 51
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+S1-01,结构预测框架与推理加速,200–450,"predictors、pipelines、GPU推理"
+S1-02,结构精修/能量最小化/优化,150–350,"refinement、relax、force-field integration"
+S1-03,对齐/比较/聚类,150–350,"structural alignment、similarity search"
+S1-04,质量评估/置信度/验证,150–300,"QA metrics、validation suites"
+S1-05,可视化与结构编辑,150–300,"viewers、editors、rendering"
+S1-06,AI结构生成与约束设计,200–450,"generative models、constraint tools"
+
+S2-01,功能注释与GO/通路映射,200–450,"annotation engines、ontology tools"
+S2-02,位点/口袋/结合位点预测,150–350,"pocket detection、binding site predictors"
+S2-03,PPI/复合体/界面预测,150–350,"docking/complex predictors、interface tools"
+S2-04,蛋白LM与图模型工具链,200–450,"protein LM、GNN toolkits、embeddings"
+S2-05,可解释性与归因/突变扫描,150–300,"attribution、in-silico mutagenesis"
+S2-06,Benchmark/数据集与评测,150–300,"datasets、metrics、leaderboards"
+
+S3-01,分子准备/构象生成/枚举,200–450,"conformers、protonation、tautomer"
+S3-02,对接引擎与采样,200–500,"docking engines、search algorithms"
+S3-03,打分/再打分/共识评分,150–350,"scoring functions、rescoring pipelines"
+S3-04,大规模虚筛工作流与分布式执行,150–350,"workflow、HPC、queue integration"
+S3-05,AI筛选：生成/主动学习/优先级,200–450,"generative、AL、ranking models"
+S3-06,Benchmark与验证（pose/affinity）,150–300,"benchmarks、metrics、datasets"
+
+S4-01,数据标准化/特征与QSAR基础工具,200–450,"featurizers、QSAR toolkits"
+S4-02,ADMET/毒性/PK 预测库,200–450,"property predictors、calibration"
+S4-03,分子生成与约束优化,200–450,"generative models、constrained search"
+S4-04,UQ/校准/可解释性,150–300,"uncertainty、interpretability tools"
+S4-05,评测基准与复现套件,150–300,"benchmarks、splits、metrics"
+S4-06,部署与筛选平台（开源）,100–250,"open platforms、dashboards"

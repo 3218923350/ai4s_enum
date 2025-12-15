@@ -1,0 +1,14 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+G1-01,PDF/LaTeX 解析与结构化抽取,200–450,"parsers、GROBID类、layout"
+G1-02,引用抽取/引文网络/元数据对齐,150–350,"citation graph tools"
+G1-03,学术检索/索引/向量检索,200–450,"search engines、vector DB"
+G1-04,文献RAG 与证据链（AI）,250–600,"RAG frameworks、grounding"
+G1-05,评测/事实核验/去幻觉,150–300,"eval harness、fact checking"
+G1-06,论文推荐与发现,150–300,"recommender systems"
+
+G2-01,实体/关系抽取（AI）,200–450,"IE models、toolkits"
+G2-02,对齐/融合/溯源与版本,150–300,"entity resolution、provenance"
+G2-03,图存储/查询/推理,200–450,"graph DB、reasoners"
+G2-04,图embedding/GNN 推断,200–450,"KGE、GNN libs"
+G2-05,证据链与引用对齐（RAG+KG）,200–450,"grounding tools"
+G2-06,基准与评测,100–250,"datasets、metrics"

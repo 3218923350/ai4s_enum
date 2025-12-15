@@ -1,0 +1,18 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+D1-01,通用科研格式解析（JSON/YAML/CSV等）,150–300,"parsers、validators"
+D1-02,领域格式（FITS/NetCDF/HDF5/VCF等）,250–600,"IO libs、converters"
+D1-03,元数据/Schema/校验与质量,150–350,"schema tools、QC"
+D1-04,ETL/流水线与连接器,200–450,"connectors、pipelines"
+D1-05,AI辅助解析/自动映射,100–250,"schema inference、LLM parsing"
+
+D2-01,工作流引擎与执行后端,200–450,"engines、executors"
+D2-02,模块/组件注册表与生态,200–500,"module registries、templates"
+D2-03,依赖/容器/环境集成,150–350,"containers、env integration"
+D2-04,测试/回归/可复现评测,150–300,"harness、CI"
+D2-05,AI生成/修复工作流,150–300,"synthesis tools、lint/fix"
+
+D3-01,通用科学可视化库（2D/3D）,250–600,"plotting、3D rendering"
+D3-02,领域可视化（分子/结构/网格/地学）,250–600,"domain viewers"
+D3-03,交互式分析与dashboard,150–350,"dashboards、notebook widgets"
+D3-04,AI辅助可视化/自动洞察,150–300,"NL-to-viz、auto insight"
+D3-05,报告生成与可复现图表,150–300,"report engines"

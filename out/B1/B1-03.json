@@ -1,0 +1,1239 @@
+{
+  "generated_at": "2025-12-15T17:50:16.440601+08:00",
+  "metadata": {
+    "leaf_cluster": {
+      "leaf_cluster_id": "B1",
+      "leaf_cluster_name": "生信-序列分析与注释生态",
+      "domain": "Bioinfo/Genomics",
+      "typical_objects": "FASTA/FASTQ, reads, alignments",
+      "task_chain": "采集/解析→QC→比对/组装→注释→评测→工作流",
+      "tool_form": "CLI + C/C++库 + workflow模块"
+    },
+    "unit": {
+      "unit_id": "B1-03",
+      "unit_name": "组装与纠错（短读/长读/混合）",
+      "target_scale": "200–500",
+      "coverage_tools": "assemblers、polishers、error correction"
+    },
+    "search": {
+      "target_candidates": 500,
+      "queries": [
+        "[GH] NextPolish",
+        "[GH] Medaka",
+        "[GH] Racon",
+        "[GH] Pilon",
+        "[GH] Unicycler",
+        "[GH] Hifiasm",
+        "[GH] Flye",
+        "[GH] Canu",
+        "[GH] MEGAHIT",
+        "[GH] SPAdes",
+        "[GH] genome assembler",
+        "[GH] de novo assembly",
+        "[GH] read error correction",
+        "[GH] genome polishing",
+        "[GH] long read assembly",
+        "[GH] short read assembly",
+        "[GH] hybrid assembly",
+        "[GH] scaffolding tool",
+        "[GH] contig generation",
+        "[GH] assembly graph",
+        "[GH] nanopore assembler",
+        "[GH] pacbio assembler",
+        "[GH] metagenome assembler",
+        "[WEB] genome assembly tools list github",
+        "[WEB] best long read assemblers github",
+        "[WEB] genome polishing software github",
+        "[WEB] read error correction algorithms github",
+        "[WEB] hybrid assembly pipeline github"
+      ],
+      "total_candidates": 1106,
+      "tool_candidates": 100,
+      "final_tools": 47
+    }
+  },
+  "tools": [
+    {
+      "name": "PHFormer",
+      "one_line_profile": "Deep learning-based solver for polyploid haplotype assembly",
+      "detailed_description": "Official implementation of PHFormer, a tool that uses a proxy-level hybrid transformer architecture to solve the multi-fragment assembly (MEC) problem for polyploid haplotype reconstruction.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "haplotype_assembly",
+        "phasing"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/521piglet/PHFormer",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "haplotype-assembly",
+        "polyploid",
+        "transformer",
+        "deep-learning"
+      ],
+      "id": 1
+    },
+    {
+      "name": "HapCHAT",
+      "one_line_profile": "Adaptive haplotype assembly tool for long reads",
+      "detailed_description": "A tool for reconstructing haplotypes (phasing) from Next Generation Sequencing data, specifically designed to handle high coverage and long reads efficiently using an adaptive approach.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "haplotype_assembly",
+        "phasing",
+        "variant_analysis"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/AlgoLab/HapCHAT",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "haplotype-assembly",
+        "ngs",
+        "long-reads",
+        "phasing"
+      ],
+      "id": 2
+    },
+    {
+      "name": "bovine-graphs",
+      "one_line_profile": "Pipeline to integrate multiple genome assemblies into a pangenome graph",
+      "detailed_description": "A workflow designed to construct pangenome graphs by integrating multiple genome assemblies, specifically tailored for bovine genomics but applicable to pangenome studies. It facilitates the analysis of structural variations and genomic diversity across populations.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "pangenome_construction",
+        "genome_assembly_integration"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/AnimalGenomicsETH/bovine-graphs",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "pangenome",
+        "graph-genome",
+        "assembly",
+        "genomics"
+      ],
+      "id": 3
+    },
+    {
+      "name": "SpadeR",
+      "one_line_profile": "R package for calculating biodiversity indices and species richness estimates",
+      "detailed_description": "SpadeR (Species-richness Prediction And Diversity Estimation in R) provides functions to compute various biodiversity indices, including species richness, Shannon entropy, and Simpson index, as well as similarity/differentiation measures between communities based on abundance or incidence data.",
+      "domains": [
+        "B1",
+        "Ecology"
+      ],
+      "subtask_category": [
+        "biodiversity_analysis",
+        "statistical_inference",
+        "species_richness_estimation"
+      ],
+      "application_level": "library",
+      "primary_language": "R",
+      "repo_url": "https://github.com/AnneChao/SpadeR",
+      "help_website": [
+        "http://chao.stat.nthu.edu.tw/wordpress/software_download/spider/"
+      ],
+      "license": null,
+      "tags": [
+        "biodiversity",
+        "statistics",
+        "ecology",
+        "r-package"
+      ],
+      "id": 4
+    },
+    {
+      "name": "hifi2genome",
+      "one_line_profile": "Workflow for assembling PacBio HiFi reads into genomes with QC",
+      "detailed_description": "A Nextflow-based pipeline developed by Arcadia Science to assemble PacBio HiFi reads into genome sequences. It includes steps for assembly, quality control statistics, and report generation, streamlining the process of de novo assembly from long-read data.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "genome_assembly",
+        "quality_control",
+        "long_read_assembly"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Groovy",
+      "repo_url": "https://github.com/Arcadia-Science/hifi2genome",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "pacbio-hifi",
+        "genome-assembly",
+        "nextflow",
+        "bioinformatics"
+      ],
+      "id": 5
+    },
+    {
+      "name": "binchicken",
+      "one_line_profile": "Pipeline for recovering low-abundance MAGs via strategic co-assembly",
+      "detailed_description": "Bin Chicken is a bioinformatics pipeline designed to improve the recovery of Metagenome Assembled Genomes (MAGs), particularly for low-abundance organisms. It employs a strategy of clustering samples and performing co-assembly on these clusters to enhance coverage and assembly quality.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "metagenome_assembly",
+        "binning",
+        "co_assembly"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/AroneyS/binchicken",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "metagenomics",
+        "mag-recovery",
+        "co-assembly",
+        "binning"
+      ],
+      "id": 6
+    },
+    {
+      "name": "INNUca",
+      "one_line_profile": "Pipeline for quality control, de novo assembly, and contamination assessment of bacterial genomes",
+      "detailed_description": "INNUca is a bioinformatics pipeline designed for the INNUENDO project. It performs quality control of reads, de novo assembly, and subsequent quality assessment of contigs, including checks for potential contamination.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "quality_control",
+        "de_novo_assembly",
+        "contamination_detection"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/B-UMMI/INNUca",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "assembly",
+        "quality-control",
+        "bacteria",
+        "pipeline"
+      ],
+      "id": 7
+    },
+    {
+      "name": "HAST",
+      "one_line_profile": "Haplotype-resolved assembler for synthetic long reads using trio-binning",
+      "detailed_description": "HAST is a specialized assembler that utilizes a trio-binning strategy to achieve haplotype-resolved assembly, specifically designed for synthetic long read data.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "haplotype_assembly",
+        "trio_binning"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/BGI-Qingdao/HAST",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "assembly",
+        "haplotype-resolved",
+        "synthetic-long-reads"
+      ],
+      "id": 8
+    },
+    {
+      "name": "TGS-GapCloser",
+      "one_line_profile": "Gap-closing tool using long reads to enhance genome assembly",
+      "detailed_description": "TGS-GapCloser is a tool designed to close gaps in genome assemblies using Third Generation Sequencing (TGS) long reads (such as PacBio or Nanopore), improving the contiguity of the final assembly.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "gap_closing",
+        "assembly_polishing"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/BGI-Qingdao/TGS-GapCloser",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "gap-closing",
+        "long-reads",
+        "genome-assembly"
+      ],
+      "id": 9
+    },
+    {
+      "name": "Hercules",
+      "one_line_profile": "Profile HMM-based hybrid error correction algorithm for long reads",
+      "detailed_description": "Hercules is a tool for correcting errors in long reads (e.g., PacBio/Nanopore) using a hybrid approach based on Profile Hidden Markov Models (HMM), leveraging short reads for accuracy.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "error_correction",
+        "read_correction"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/BilkentCompGen/hercules",
+      "help_website": [],
+      "license": "BSD-3-Clause",
+      "tags": [
+        "error-correction",
+        "long-reads",
+        "hmm"
+      ],
+      "id": 10
+    },
+    {
+      "name": "proovread",
+      "one_line_profile": "Hybrid error correction for PacBio reads using short read consensus",
+      "detailed_description": "proovread is a hybrid correction pipeline for PacBio SMRT reads. It uses high-accuracy short reads (e.g., Illumina) to iteratively correct errors in long reads through consensus calling.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "error_correction",
+        "hybrid_correction"
+      ],
+      "application_level": "solver",
+      "primary_language": "Perl",
+      "repo_url": "https://github.com/BioInf-Wuerzburg/proovread",
+      "help_website": [
+        "http://www.bioinf.uni-wuerzburg.de/TR/proovread/"
+      ],
+      "license": "MIT",
+      "tags": [
+        "pacbio",
+        "error-correction",
+        "hybrid-correction"
+      ],
+      "id": 11
+    },
+    {
+      "name": "Reads2Resistome",
+      "one_line_profile": "Workflow for genome assembly and resistome identification",
+      "detailed_description": "Reads2Resistome is a Nextflow pipeline capable of performing hybrid and non-hybrid whole genome assembly, followed by resistome (antimicrobial resistance gene) identification, supporting Illumina, PacBio, and Nanopore data.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "genome_assembly",
+        "resistome_identification"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Nextflow",
+      "repo_url": "https://github.com/BioRRW/Reads2Resistome",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "assembly",
+        "resistome",
+        "nextflow",
+        "pipeline"
+      ],
+      "id": 12
+    },
+    {
+      "name": "LR_Gapcloser",
+      "one_line_profile": "Gap closing tool for genome assemblies using long reads",
+      "detailed_description": "LR_Gapcloser uses long sequenced reads (such as PacBio or Nanopore) to close gaps in fragmented genome assemblies. It aligns long reads to gap regions to bridge contigs and improve assembly continuity.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "gap_closing",
+        "genome_assembly",
+        "long_read_processing"
+      ],
+      "application_level": "solver",
+      "primary_language": "Perl",
+      "repo_url": "https://github.com/CAFS-bioinformatics/LR_Gapcloser",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "genome-assembly",
+        "gap-filling",
+        "long-reads",
+        "pacbio",
+        "nanopore"
+      ],
+      "id": 13
+    },
+    {
+      "name": "IRMA",
+      "one_line_profile": "Iterative Refinement Meta-Assembler for virus genomes",
+      "detailed_description": "IRMA is a robust and adaptive assembly tool designed specifically for highly variable RNA viruses (like Influenza, Ebola, Coronavirus). It uses an iterative refinement approach to handle high mutation rates and diverse viral populations.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "viral_assembly",
+        "variant_calling",
+        "iterative_assembly"
+      ],
+      "application_level": "solver",
+      "primary_language": "Perl",
+      "repo_url": "https://github.com/CDCgov/irma",
+      "help_website": [
+        "https://wonder.cdc.gov/amd/flu/irma/"
+      ],
+      "license": "Apache-2.0",
+      "tags": [
+        "virus-assembly",
+        "influenza",
+        "ngs",
+        "iterative-refinement"
+      ],
+      "id": 14
+    },
+    {
+      "name": "Apollo",
+      "one_line_profile": "Assembly polishing algorithm for correcting assembly errors",
+      "detailed_description": "Apollo is a technology-independent genome assembly polishing tool. It utilizes multiple sets of reads to correct errors in assemblies of any size, aiming to improve the base-level accuracy of the consensus sequence.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "assembly_polishing",
+        "error_correction",
+        "genome_assembly"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/CMU-SAFARI/Apollo",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "polishing",
+        "genome-assembly",
+        "error-correction"
+      ],
+      "id": 15
+    },
+    {
+      "name": "PathSeq",
+      "one_line_profile": "Computational pipeline for microbial identification in metagenomic samples",
+      "detailed_description": "PathSeq 2.0 is a customizable pipeline for discovering and identifying microbial sequences in metagenomic data. It facilitates the subtraction of host reads and the taxonomic classification of non-host reads to detect pathogens or characterize the microbiome.",
+      "domains": [
+        "B1",
+        "B1-06"
+      ],
+      "subtask_category": [
+        "metagenomics",
+        "pathogen_detection",
+        "taxonomic_classification"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Java",
+      "repo_url": "https://github.com/ChandraPedamallu/PathSeq",
+      "help_website": [],
+      "license": "NOASSERTION",
+      "tags": [
+        "metagenomics",
+        "microbiome",
+        "pathogen-discovery"
+      ],
+      "id": 16
+    },
+    {
+      "name": "Ratatosk",
+      "one_line_profile": "Hybrid error correction tool for long reads using colored de Bruijn graphs",
+      "detailed_description": "Ratatosk corrects long reads (Oxford Nanopore/PacBio) using short reads (Illumina) by traversing a colored de Bruijn graph. It is designed to reduce error rates in long-read sequencing data while preserving structural variations.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "error_correction",
+        "hybrid_correction"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/DecodeGenetics/Ratatosk",
+      "help_website": [],
+      "license": "BSD-2-Clause",
+      "tags": [
+        "long-reads",
+        "error-correction",
+        "de-bruijn-graph"
+      ],
+      "id": 17
+    },
+    {
+      "name": "viralFlye",
+      "one_line_profile": "Assembly pipeline optimized for viral genomes using Flye",
+      "detailed_description": "viralFlye is a specialized pipeline designed to assemble viral genomes from long-read sequencing data. It leverages the Flye assembler and includes steps tailored for the circularity and specific characteristics of viral DNA.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "assembly",
+        "viral_assembly"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/Dmitry-Antipov/viralFlye",
+      "help_website": [],
+      "license": "NOASSERTION",
+      "tags": [
+        "virus",
+        "assembly",
+        "long-reads",
+        "flye"
+      ],
+      "id": 18
+    },
+    {
+      "name": "BASALT",
+      "one_line_profile": "Binning and refinement toolkit for metagenomic assemblies",
+      "detailed_description": "BASALT (Binning Across a Series of Assemblies Toolkit) is a pipeline for recovering high-quality metagenome-assembled genomes (MAGs) from short- and long-read sequencing data. It integrates binning and refinement steps to improve genome quality.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "binning",
+        "refinement",
+        "metagenomics"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/EMBL-PKU/BASALT",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "metagenomics",
+        "binning",
+        "mag"
+      ],
+      "id": 19
+    },
+    {
+      "name": "RAMPART",
+      "one_line_profile": "Configurable de novo assembly pipeline for HPC environments",
+      "detailed_description": "RAMPART is a workflow management tool for de novo genome assembly. It allows users to configure and execute complex assembly pipelines involving various third-party tools, managing dependencies and execution on high-performance computing clusters.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "assembly",
+        "workflow_management"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Java",
+      "repo_url": "https://github.com/EarlhamInst/RAMPART",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "pipeline",
+        "hpc",
+        "de-novo-assembly"
+      ],
+      "id": 20
+    },
+    {
+      "name": "indel_correction_pipeline",
+      "one_line_profile": "Pipeline for correcting heterozygote indel errors in Falcon assemblies",
+      "detailed_description": "A specialized pipeline developed by EichlerLab to correct residual heterozygote insertion/deletion (indel) errors in genome assemblies produced by Falcon and polished by Quiver/Pilon. It targets specific error modes remaining after standard polishing.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "error_correction",
+        "polishing"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/EichlerLab/indel_correction_pipeline",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "indel",
+        "polishing",
+        "falcon"
+      ],
+      "id": 21
+    },
+    {
+      "name": "MindTheGap",
+      "one_line_profile": "Insertion variant caller and local assembly tool",
+      "detailed_description": "MindTheGap is designed to detect and assemble DNA insertion variants from short-read sequencing data. It performs local assembly of the inserted sequences, enabling the characterization of variants that are often missed by standard mapping-based callers.",
+      "domains": [
+        "B1",
+        "B1-03",
+        "B1-04"
+      ],
+      "subtask_category": [
+        "variant_calling",
+        "local_assembly"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/GATB/MindTheGap",
+      "help_website": [],
+      "license": "AGPL-3.0",
+      "tags": [
+        "sv-calling",
+        "insertion",
+        "local-assembly"
+      ],
+      "id": 22
+    },
+    {
+      "name": "Bloocoo",
+      "one_line_profile": "Memory-efficient k-mer spectrum-based read error corrector",
+      "detailed_description": "Bloocoo is a k-mer spectrum-based read error corrector designed to handle large datasets with a very low memory footprint. It is part of the GATB (Genome Analysis Toolbox) ecosystem and targets high-throughput sequencing data cleanup.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "error_correction",
+        "read_cleaning"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/GATB/bloocoo",
+      "help_website": [
+        "https://gatb.inria.fr/software/bloocoo/"
+      ],
+      "license": "AGPL-3.0",
+      "tags": [
+        "error-correction",
+        "k-mer",
+        "ngs",
+        "reads"
+      ],
+      "id": 23
+    },
+    {
+      "name": "CONNET",
+      "one_line_profile": "Deep learning-based consensus tool for Nanopore assembly polishing",
+      "detailed_description": "CONNET is a deep learning framework designed to improve the accuracy of genome consensus in assembling Nanopore sequencing data. It functions as a polisher to correct errors in raw assemblies.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "assembly_polishing",
+        "consensus_calling"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/HKU-BAL/CONNET",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "nanopore",
+        "deep-learning",
+        "polishing",
+        "genome-assembly"
+      ],
+      "id": 24
+    },
+    {
+      "name": "nanoflow",
+      "one_line_profile": "Nextflow pipeline for de novo assembly of nanopore reads",
+      "detailed_description": "Nanoflow is a bioinformatics pipeline built using Nextflow for the de novo assembly of Nanopore sequencing reads. It automates the workflow from raw reads to assembled contigs.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "de_novo_assembly",
+        "workflow_automation"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Nextflow",
+      "repo_url": "https://github.com/HadrienG/nanoflow",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "nanopore",
+        "assembly",
+        "nextflow",
+        "pipeline"
+      ],
+      "id": 25
+    },
+    {
+      "name": "HINGE",
+      "one_line_profile": "Long-read assembler optimized for repeat resolution",
+      "detailed_description": "HINGE is a long-read assembler that focuses on optimal repeat resolution. It utilizes a 'hinge' graph approach to resolve ambiguities in assembly graphs caused by repetitive regions in the genome.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "de_novo_assembly",
+        "long_read_assembly"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/HingeAssembler/HINGE",
+      "help_website": [],
+      "license": "NOASSERTION",
+      "tags": [
+        "assembly",
+        "long-reads",
+        "repeat-resolution",
+        "graph-assembly"
+      ],
+      "id": 26
+    },
+    {
+      "name": "PHap",
+      "one_line_profile": "Haplotype-resolved T2T genome assembly pipeline for autopolyploids",
+      "detailed_description": "PHap is a genome assembly pipeline designed specifically for autopolyploids. It utilizes long-read sequencing data and Hi-C data to produce haplotype-resolved and telomere-to-telomere (T2T) assemblies, addressing the complexity of polyploid genome reconstruction.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "genome_assembly",
+        "haplotype_phasing"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/JiaoLab2021/PHap",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "genome-assembly",
+        "polyploid",
+        "haplotype-assembly",
+        "long-reads",
+        "hi-c"
+      ],
+      "id": 27
+    },
+    {
+      "name": "Assembly_tools",
+      "one_line_profile": "Collection of utilities for genome assembly analysis",
+      "detailed_description": "A toolkit containing various scripts and utilities to assist in the analysis, manipulation, and quality assessment of genome assembly data.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "assembly_analysis",
+        "quality_control"
+      ],
+      "application_level": "library",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/Jwindler/Assembly_tools",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "genome-assembly",
+        "bioinformatics-scripts",
+        "assembly-qc"
+      ],
+      "id": 28
+    },
+    {
+      "name": "Kourami",
+      "one_line_profile": "Graph-guided assembly tool for high-resolution HLA typing",
+      "detailed_description": "Kourami constructs a partial order graph from a panel of reference multiple sequence alignments and assembles HLA alleles using read alignments to this graph. It is designed to provide high-resolution HLA typing from shotgun sequencing data.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "assembly",
+        "hla_typing"
+      ],
+      "application_level": "solver",
+      "primary_language": "Java",
+      "repo_url": "https://github.com/Kingsford-Group/kourami",
+      "help_website": [],
+      "license": "BSD-3-Clause",
+      "tags": [
+        "hla",
+        "assembly",
+        "graph-assembly",
+        "genomics"
+      ],
+      "id": 29
+    },
+    {
+      "name": "hapcorrect",
+      "one_line_profile": "Haplotype phase-switching error correction for long reads",
+      "detailed_description": "A tool designed to correct haplotype phase-switching errors in long reads (PacBio/Nanopore). It is often used in conjunction with assemblers like Flye to improve the quality of diploid assemblies.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "error_correction",
+        "phasing"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/KolmogorovLab/hapcorrect",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "long-reads",
+        "haplotype",
+        "error-correction"
+      ],
+      "id": 30
+    },
+    {
+      "name": "ont-assembly-snake",
+      "one_line_profile": "Snakemake workflow for ONT bacterial genome assembly and polishing",
+      "detailed_description": "A comprehensive Snakemake pipeline that automates the assembly of bacterial genomes from Oxford Nanopore (ONT) data. It integrates multiple tools for assembly (Flye, Raven, etc.) and polishing (Medaka, Racon) to produce high-quality consensus sequences.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "workflow",
+        "assembly",
+        "polishing"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/LaborBerlin/ont-assembly-snake",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "snakemake",
+        "ont",
+        "bacterial-assembly",
+        "pipeline"
+      ],
+      "id": 31
+    },
+    {
+      "name": "colora",
+      "one_line_profile": "Automated workflow for long-read de novo genome assembly",
+      "detailed_description": "A Snakemake-based workflow for de novo genome assembly using long reads (PacBio HiFi or ONT). It handles assembly, purging of haplotigs, and scaffolding, producing chromosome-scale primary and phased assemblies including organelle genomes.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "workflow",
+        "assembly",
+        "quality_control"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/LiaOb21/colora",
+      "help_website": [],
+      "license": "NOASSERTION",
+      "tags": [
+        "snakemake",
+        "genome-assembly",
+        "long-reads",
+        "hifi"
+      ],
+      "id": 32
+    },
+    {
+      "name": "CarpeDeam",
+      "one_line_profile": "Ancient metagenome assembler for damaged DNA datasets",
+      "detailed_description": "A specialized de novo assembler designed for ancient DNA (aDNA) metagenomics. It addresses specific challenges of aDNA such as fragmentation and cytosine deamination damage to reconstruct sequences from heavily damaged datasets.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "assembly",
+        "metagenomics"
+      ],
+      "application_level": "solver",
+      "primary_language": "C",
+      "repo_url": "https://github.com/LouisPwr/CarpeDeam",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "ancient-dna",
+        "metagenomics",
+        "assembler",
+        "c"
+      ],
+      "id": 33
+    },
+    {
+      "name": "DeChat",
+      "one_line_profile": "Repeat and haplotype aware error correction for Nanopore reads",
+      "detailed_description": "DeChat is an error correction tool for Oxford Nanopore sequencing data. It specifically targets errors in repetitive regions and handles haplotype differences to improve the accuracy of raw reads prior to assembly or analysis.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "error_correction",
+        "read_processing"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/LuoGroup2023/DeChat",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "nanopore",
+        "error-correction",
+        "haplotype-aware"
+      ],
+      "id": 34
+    },
+    {
+      "name": "CAT_pack",
+      "one_line_profile": "Taxonomic classification toolkit for contigs and MAGs",
+      "detailed_description": "Contains CAT (Contig Annotation Tool), BAT (Bin Annotation Tool), and RAT (Read Annotation Tool). These tools are used to taxonomically classify contigs and metagenome-assembled genomes (MAGs) based on protein homology, essential for assessing assembly output composition.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "taxonomic_classification",
+        "annotation"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/MGXlab/CAT_pack",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "metagenomics",
+        "taxonomy",
+        "contigs",
+        "mags"
+      ],
+      "id": 35
+    },
+    {
+      "name": "multi-metagenome",
+      "one_line_profile": "Scripts for differential coverage binning and assembly of individual microbial genomes from metagenomes",
+      "detailed_description": "A collection of scripts and workflows designed to facilitate the extraction of individual microbial genomes from metagenomic data, primarily focusing on differential coverage binning techniques.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "metagenome_assembly",
+        "binning"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Perl",
+      "repo_url": "https://github.com/MadsAlbertsen/multi-metagenome",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "metagenomics",
+        "assembly",
+        "binning",
+        "perl"
+      ],
+      "id": 36
+    },
+    {
+      "name": "Inspector",
+      "one_line_profile": "Evaluation tool for long-read de novo assembly results",
+      "detailed_description": "Inspector is a tool designed to evaluate the quality of de novo assemblies generated from long-read data. It identifies structural errors and provides quality metrics to assess assembly accuracy.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "assembly_evaluation",
+        "quality_control"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/Maggi-Chen/Inspector",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "long-read",
+        "assembly-evaluation",
+        "qc"
+      ],
+      "id": 37
+    },
+    {
+      "name": "DAmar",
+      "one_line_profile": "Pipeline for long read QC, assembly, and scaffolding",
+      "detailed_description": "DAmar is a pipeline designed to handle long-read sequencing data, performing quality control, de novo assembly, and scaffolding steps to produce genomic assemblies.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "assembly",
+        "scaffolding",
+        "quality_control"
+      ],
+      "application_level": "workflow",
+      "primary_language": "C",
+      "repo_url": "https://github.com/MartinPippel/DAmar",
+      "help_website": [],
+      "license": "NOASSERTION",
+      "tags": [
+        "long-read",
+        "pipeline",
+        "genomics"
+      ],
+      "id": 38
+    },
+    {
+      "name": "MiRCA",
+      "one_line_profile": "Hybrid error correction tool for NGS long reads",
+      "detailed_description": "MiRCA is a hybrid error correction tool that utilizes short reads to correct errors in long-read sequencing data (NGS), aiming to improve assembly quality.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "error_correction",
+        "read_processing"
+      ],
+      "application_level": "solver",
+      "primary_language": "C",
+      "repo_url": "https://github.com/Mkchouk/MiRCA",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "hybrid-correction",
+        "long-read",
+        "ngs"
+      ],
+      "id": 39
+    },
+    {
+      "name": "NovoGraph",
+      "one_line_profile": "Tool for building whole genome graphs from long-read assemblies",
+      "detailed_description": "NovoGraph constructs whole genome graphs by utilizing long-read based de novo assemblies, facilitating the analysis of complex genomic structures and variations.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "genome_graph_construction",
+        "assembly"
+      ],
+      "application_level": "solver",
+      "primary_language": "Perl",
+      "repo_url": "https://github.com/NCBI-Hackathons/NovoGraph",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "genome-graph",
+        "long-read",
+        "assembly"
+      ],
+      "id": 40
+    },
+    {
+      "name": "de-novo-transcriptome-assembly-pipeline",
+      "one_line_profile": "Pipeline for combined de novo transcriptome assembly",
+      "detailed_description": "A pipeline developed by NCGAS for de novo transcriptome assembly that leverages multiple assemblers and parameter settings to optimize assembly results.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "transcriptome_assembly",
+        "workflow_management"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Shell",
+      "repo_url": "https://github.com/NCGAS/de-novo-transcriptome-assembly-pipeline",
+      "help_website": [],
+      "license": "NOASSERTION",
+      "tags": [
+        "transcriptomics",
+        "pipeline",
+        "ncgas"
+      ],
+      "id": 41
+    },
+    {
+      "name": "IMSindel",
+      "one_line_profile": "Intermediate-size indel detection tool using de novo assembly",
+      "detailed_description": "IMSindel is a tool for detecting intermediate-size insertions and deletions (indels) that are often missed by standard variant callers. It incorporates de novo assembly and gapped global-local alignment with split read analysis to improve accuracy.",
+      "domains": [
+        "B1",
+        "B1-03",
+        "B1-04"
+      ],
+      "subtask_category": [
+        "variant_calling",
+        "assembly",
+        "indel_detection"
+      ],
+      "application_level": "solver",
+      "primary_language": "Ruby",
+      "repo_url": "https://github.com/NCGG-MGC/IMSindel",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "indel",
+        "assembly",
+        "genomics",
+        "variant-calling"
+      ],
+      "id": 42
+    },
+    {
+      "name": "HECIL",
+      "one_line_profile": "Hybrid error correction for long reads using iterative learning",
+      "detailed_description": "HECIL is a hybrid error correction tool that utilizes short reads to correct errors in long reads (such as those from PacBio or Nanopore) through an iterative learning approach.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "error_correction",
+        "hybrid_correction"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/NDBL/HECIL",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "long-reads",
+        "error-correction",
+        "hybrid-assembly"
+      ],
+      "id": 43
+    },
+    {
+      "name": "NextDenovo",
+      "one_line_profile": "String graph-based de novo assembler for long reads",
+      "detailed_description": "NextDenovo is a fast and accurate de novo genome assembler designed specifically for long reads (PacBio HiFi/CLR and Oxford Nanopore). It utilizes a string graph approach to handle repetitive regions and high error rates.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "assembly",
+        "de_novo_assembly"
+      ],
+      "application_level": "solver",
+      "primary_language": "C",
+      "repo_url": "https://github.com/Nextomics/NextDenovo",
+      "help_website": [
+        "https://nextdenovo.readthedocs.io"
+      ],
+      "license": "GPL-3.0",
+      "tags": [
+        "genome-assembly",
+        "long-reads",
+        "pacbio",
+        "nanopore"
+      ],
+      "id": 44
+    },
+    {
+      "name": "NextPolish",
+      "one_line_profile": "Genome polishing tool for fixing base errors in assemblies",
+      "detailed_description": "NextPolish is a tool used to fix base errors (SNV/Indel) in genome assemblies generated by noisy long reads. It supports polishing with both short reads (Illumina) and long reads.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "polishing",
+        "error_correction"
+      ],
+      "application_level": "solver",
+      "primary_language": "C",
+      "repo_url": "https://github.com/Nextomics/NextPolish",
+      "help_website": [
+        "https://nextpolish.readthedocs.io"
+      ],
+      "license": "GPL-3.0",
+      "tags": [
+        "genome-polishing",
+        "consensus",
+        "error-correction"
+      ],
+      "id": 45
+    },
+    {
+      "name": "NextPolish2",
+      "one_line_profile": "Repeat-aware polishing for HiFi long read assemblies",
+      "detailed_description": "NextPolish2 is the successor to NextPolish, specifically optimized for polishing genomes assembled from PacBio HiFi reads. It focuses on repeat-aware polishing to improve assembly quality in complex genomic regions.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "polishing",
+        "error_correction"
+      ],
+      "application_level": "solver",
+      "primary_language": "Rust",
+      "repo_url": "https://github.com/Nextomics/NextPolish2",
+      "help_website": [],
+      "license": "NOASSERTION",
+      "tags": [
+        "hifi-reads",
+        "genome-polishing",
+        "rust"
+      ],
+      "id": 46
+    },
+    {
+      "name": "ELBA",
+      "one_line_profile": "Parallel string graph construction for genome assembly",
+      "detailed_description": "ELBA is a high-performance tool for parallel string graph construction, transitive reduction, and contig generation, serving as a core component for de novo genome assembly pipelines.",
+      "domains": [
+        "B1",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "assembly",
+        "graph_construction"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/PASSIONLab/ELBA",
+      "help_website": [],
+      "license": "NOASSERTION",
+      "tags": [
+        "string-graph",
+        "genome-assembly",
+        "parallel-computing"
+      ],
+      "id": 47
+    }
+  ]
+}

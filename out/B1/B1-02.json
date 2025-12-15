@@ -1,0 +1,1303 @@
+{
+  "generated_at": "2025-12-15T17:37:15.267899+08:00",
+  "metadata": {
+    "leaf_cluster": {
+      "leaf_cluster_id": "B1",
+      "leaf_cluster_name": "生信-序列分析与注释生态",
+      "domain": "Bioinfo/Genomics",
+      "typical_objects": "FASTA/FASTQ, reads, alignments",
+      "task_chain": "采集/解析→QC→比对/组装→注释→评测→工作流",
+      "tool_form": "CLI + C/C++库 + workflow模块"
+    },
+    "unit": {
+      "unit_id": "B1-02",
+      "unit_name": "比对与映射（短读长读）",
+      "target_scale": "250–600",
+      "coverage_tools": "aligners、mappers、indexing、splice-aware"
+    },
+    "search": {
+      "target_candidates": 600,
+      "queries": [
+        "[GH] Novoalign",
+        "[GH] Subread",
+        "[GH] BWA-MEM2",
+        "[GH] HISAT2",
+        "[GH] STAR",
+        "[GH] Minimap2",
+        "[GH] Bowtie2",
+        "[GH] BWA",
+        "[GH] sequence alignment",
+        "[GH] read mapping",
+        "[GH] genome aligner",
+        "[GH] short read aligner",
+        "[GH] long read mapping",
+        "[GH] splice-aware alignment",
+        "[GH] RNA-seq aligner",
+        "[GH] DNA-seq mapper",
+        "[GH] BWT indexing",
+        "[GH] FM-index",
+        "[GH] SAM format tools",
+        "[GH] BAM processing",
+        "[GH] nanopore alignment",
+        "[GH] pacbio mapping",
+        "[WEB] best genome aligners benchmark github",
+        "[WEB] short read mapper bwa bowtie2 github",
+        "[WEB] long read aligner minimap2 nanopore github",
+        "[WEB] splice-aware aligner rna-seq star hisat2 github",
+        "[WEB] awesome bioinformatics sequence alignment github"
+      ],
+      "total_candidates": 1029,
+      "tool_candidates": 100,
+      "final_tools": 48
+    }
+  },
+  "tools": [
+    {
+      "name": "rust-bwa",
+      "one_line_profile": "Rust bindings for the BWA sequence aligner",
+      "detailed_description": "A Rust wrapper around the C API of the Burrows-Wheeler Aligner (BWA), enabling high-performance genomic sequence alignment integration into Rust-based bioinformatics applications.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "sequence_alignment",
+        "genome_mapping"
+      ],
+      "application_level": "library",
+      "primary_language": "Rust",
+      "repo_url": "https://github.com/10XGenomics/rust-bwa",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "bwa",
+        "alignment",
+        "rust",
+        "bindings",
+        "bioinformatics"
+      ],
+      "id": 1
+    },
+    {
+      "name": "rust-pseudoaligner",
+      "one_line_profile": "Pseudo-aligner for Single-Cell RNA-seq data",
+      "detailed_description": "A specialized tool implemented in Rust for pseudo-alignment of single-cell RNA-seq reads to transcriptomes, facilitating rapid quantification of gene expression without full base-to-base alignment.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "pseudo_alignment",
+        "quantification",
+        "scRNA-seq"
+      ],
+      "application_level": "solver",
+      "primary_language": "Rust",
+      "repo_url": "https://github.com/10XGenomics/rust-pseudoaligner",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "pseudoalignment",
+        "scRNA-seq",
+        "transcriptomics",
+        "rust"
+      ],
+      "id": 2
+    },
+    {
+      "name": "thermite",
+      "one_line_profile": "Spliced short read aligner implemented in Rust",
+      "detailed_description": "A genomic aligner designed to handle spliced alignments of short sequencing reads, particularly useful for RNA-seq data analysis where reads span exon junctions.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "spliced_alignment",
+        "rna-seq_mapping"
+      ],
+      "application_level": "solver",
+      "primary_language": "Rust",
+      "repo_url": "https://github.com/10XGenomics/thermite",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "aligner",
+        "splicing",
+        "rna-seq",
+        "rust"
+      ],
+      "id": 3
+    },
+    {
+      "name": "docker-4dn-hic",
+      "one_line_profile": "Containerized pipeline for 4DN Hi-C data processing",
+      "detailed_description": "A Docker-based workflow encapsulating the 4D Nucleome (4DN) project's pipeline for processing Hi-C chromatin interaction data, performing tasks such as sequence alignment, filtering, and contact matrix generation.",
+      "domains": [
+        "B1",
+        "B1-02",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "hic_processing",
+        "sequence_alignment",
+        "pipeline"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Common Workflow Language",
+      "repo_url": "https://github.com/4dn-dcic/docker-4dn-hic",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "hi-c",
+        "docker",
+        "pipeline",
+        "genomics",
+        "chromatin"
+      ],
+      "id": 4
+    },
+    {
+      "name": "mappy-rs",
+      "one_line_profile": "Rust bindings for the minimap2 aligner",
+      "detailed_description": "Provides Rust language bindings to minimap2, a versatile pairwise aligner for genomic and spliced nucleotide sequences, enabling the development of high-performance mapping tools in Rust.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "sequence_mapping",
+        "alignment"
+      ],
+      "application_level": "library",
+      "primary_language": "Rust",
+      "repo_url": "https://github.com/Adoni5/mappy-rs",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "minimap2",
+        "rust",
+        "bindings",
+        "mapping"
+      ],
+      "id": 5
+    },
+    {
+      "name": "shark",
+      "one_line_profile": "Mapping-free read recruitment tool for RNA-Seq",
+      "detailed_description": "A bioinformatics tool designed to associate or 'fish' relevant reads from RNA-Seq samples to a set of target sequences without performing full genome alignment, useful for targeted analysis and filtering.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "read_filtering",
+        "sequence_association",
+        "mapping-free_analysis"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/AlgoLab/shark",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "rna-seq",
+        "k-mer",
+        "read-recruitment",
+        "mapping-free"
+      ],
+      "id": 6
+    },
+    {
+      "name": "mmr",
+      "one_line_profile": "Minimap2 implementation optimized for binseq inputs",
+      "detailed_description": "A Rust-based implementation of the minimap2 aligner functionality, specifically designed to handle binseq input formats for efficient sequence alignment tasks.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "alignment"
+      ],
+      "application_level": "solver",
+      "primary_language": "Rust",
+      "repo_url": "https://github.com/ArcInstitute/mmr",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "alignment",
+        "minimap2",
+        "rust",
+        "genomics"
+      ],
+      "id": 7
+    },
+    {
+      "name": "disambiguate",
+      "one_line_profile": "Disambiguation of NGS reads aligned to multiple genomes",
+      "detailed_description": "A tool designed to disambiguate sequencing reads aligned to both human and mouse genomes (e.g., in xenograft samples) using aligners like Tophat or BWA-MEM, enabling accurate separation of host and graft reads.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "alignment_filtering",
+        "quality_control"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/AstraZeneca-NGS/disambiguate",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "ngs",
+        "xenograft",
+        "alignment",
+        "bwa",
+        "tophat"
+      ],
+      "id": 8
+    },
+    {
+      "name": "Bowtie",
+      "one_line_profile": "Ultrafast and memory-efficient short read aligner",
+      "detailed_description": "Bowtie is an ultrafast, memory-efficient short read aligner. It aligns short DNA sequences (reads) to the human genome at a rate of over 25 million 35-bp reads per hour. It indexes the genome with a Burrows-Wheeler index to keep its memory footprint small.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "read_alignment",
+        "short_read_mapping"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/BenLangmead/bowtie",
+      "help_website": [
+        "http://bowtie-bio.sourceforge.net/index.shtml"
+      ],
+      "license": "NOASSERTION",
+      "tags": [
+        "alignment",
+        "short-reads",
+        "burrows-wheeler",
+        "ngs"
+      ],
+      "id": 9
+    },
+    {
+      "name": "Bowtie 2",
+      "one_line_profile": "Fast and sensitive gapped read aligner",
+      "detailed_description": "Bowtie 2 is an ultrafast and memory-efficient tool for aligning sequencing reads to long reference sequences. It is particularly good at aligning reads of about 50 up to 100s or 1,000s of characters, and good at aligning to relatively long (e.g. mammalian) genomes. It supports gapped alignment.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "read_alignment",
+        "gapped_alignment"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/BenLangmead/bowtie2",
+      "help_website": [
+        "http://bowtie-bio.sourceforge.net/bowtie2/index.shtml"
+      ],
+      "license": "GPL-3.0",
+      "tags": [
+        "alignment",
+        "ngs",
+        "gapped-alignment",
+        "sequencing"
+      ],
+      "id": 10
+    },
+    {
+      "name": "Qtip",
+      "one_line_profile": "Prediction of read alignment mapping qualities via simulation",
+      "detailed_description": "Qtip is a tool that uses a tandem simulation approach to accurately predict mapping qualities for read alignments. It addresses the issue where aligners may report inaccurate mapping qualities, improving downstream analysis reliability.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "mapping_quality_prediction",
+        "simulation"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/BenLangmead/qtip",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "mapping-quality",
+        "simulation",
+        "alignment-qc"
+      ],
+      "id": 11
+    },
+    {
+      "name": "GateKeeper",
+      "one_line_profile": "FPGA-based fast alignment filter for DNA short read mapping",
+      "detailed_description": "GateKeeper is a hardware accelerator design (VHDL) that functions as a fast pre-alignment filter. It quickly verifies candidate locations provided by the index to reduce the burden on the expensive sequence alignment step.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "alignment_filtering",
+        "hardware_acceleration"
+      ],
+      "application_level": "solver",
+      "primary_language": "VHDL",
+      "repo_url": "https://github.com/BilkentCompGen/GateKeeper",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "fpga",
+        "hardware-acceleration",
+        "alignment-filter",
+        "short-reads"
+      ],
+      "id": 12
+    },
+    {
+      "name": "BBMap",
+      "one_line_profile": "Splice-aware global and local aligner for DNA and RNA sequencing reads",
+      "detailed_description": "BBMap is a splice-aware global and local aligner for DNA and RNA sequencing reads. It is capable of handling very large genomes and is part of the BBTools suite, which includes various utilities for manipulating sequence data.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "read_alignment",
+        "splice_aware_alignment"
+      ],
+      "application_level": "solver",
+      "primary_language": "Java",
+      "repo_url": "https://github.com/BioInfoTools/BBMap",
+      "help_website": [
+        "https://jgi.doe.gov/data-and-tools/bbtools/"
+      ],
+      "license": "NOASSERTION",
+      "tags": [
+        "alignment",
+        "rna-seq",
+        "dna-seq",
+        "splice-aware"
+      ],
+      "id": 13
+    },
+    {
+      "name": "BioAlignments.jl",
+      "one_line_profile": "Julia library for sequence alignment algorithms",
+      "detailed_description": "BioAlignments.jl provides data structures and algorithms for sequence alignment within the BioJulia ecosystem. It supports various alignment tasks including pairwise alignment and handling of alignment anchors.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "sequence_alignment",
+        "pairwise_alignment"
+      ],
+      "application_level": "library",
+      "primary_language": "Julia",
+      "repo_url": "https://github.com/BioJulia/BioAlignments.jl",
+      "help_website": [
+        "https://biojulia.net/BioAlignments.jl/stable/"
+      ],
+      "license": "MIT",
+      "tags": [
+        "julia",
+        "bioinformatics",
+        "sequence-alignment"
+      ],
+      "id": 14
+    },
+    {
+      "name": "FMIndexes.jl",
+      "one_line_profile": "FM-index implementation for full-text search and sequence indexing",
+      "detailed_description": "FMIndexes.jl implements the FM-index data structure, which is critical for memory-efficient full-text search and is the core indexing mechanism used in many modern short read aligners (like Bowtie/BWA).",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "indexing",
+        "sequence_search"
+      ],
+      "application_level": "library",
+      "primary_language": "Julia",
+      "repo_url": "https://github.com/BioJulia/FMIndexes.jl",
+      "help_website": [],
+      "license": "NOASSERTION",
+      "tags": [
+        "fm-index",
+        "indexing",
+        "full-text-search",
+        "julia"
+      ],
+      "id": 15
+    },
+    {
+      "name": "XAM.jl",
+      "one_line_profile": "Julia library for parsing and processing SAM/BAM files",
+      "detailed_description": "XAM.jl is a library designed to parse, process, and manipulate SAM (Sequence Alignment/Map) and BAM (Binary Alignment/Map) formatted files, which are the standard output formats for sequence alignment tools.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "file_parsing",
+        "alignment_processing"
+      ],
+      "application_level": "library",
+      "primary_language": "Julia",
+      "repo_url": "https://github.com/BioJulia/XAM.jl",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "sam",
+        "bam",
+        "file-format",
+        "julia"
+      ],
+      "id": 16
+    },
+    {
+      "name": "BLEND",
+      "one_line_profile": "Efficient fuzzy seed match mechanism for read mapping and overlapping",
+      "detailed_description": "BLEND is a mechanism designed to efficiently find fuzzy seed matches between sequences. It significantly improves performance and accuracy while reducing memory usage for finding overlapping reads and read mapping tasks.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "read_mapping",
+        "overlap_finding"
+      ],
+      "application_level": "solver",
+      "primary_language": "C",
+      "repo_url": "https://github.com/CMU-SAFARI/BLEND",
+      "help_website": [],
+      "license": "NOASSERTION",
+      "tags": [
+        "read-mapping",
+        "fuzzy-matching",
+        "seed-and-extend",
+        "genomics"
+      ],
+      "id": 17
+    },
+    {
+      "name": "GateSeeder",
+      "one_line_profile": "Near-memory CPU-FPGA co-design for accelerated short and long-read mapping",
+      "detailed_description": "GateSeeder is a near-memory CPU-FPGA co-design aimed at alleviating compute and memory bottlenecks in short and long-read mapping. It significantly outperforms standard tools like Minimap2 in speed for ONT, HiFi, and Illumina reads.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "read_mapping",
+        "alignment_acceleration"
+      ],
+      "application_level": "solver",
+      "primary_language": "C",
+      "repo_url": "https://github.com/CMU-SAFARI/GateSeeder",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "fpga",
+        "read-mapping",
+        "hardware-acceleration",
+        "bioinformatics"
+      ],
+      "id": 18
+    },
+    {
+      "name": "Genome-on-Diet",
+      "one_line_profile": "Memory-efficient framework using sparsified genomics for read mapping and profiling",
+      "detailed_description": "Genome-on-Diet is a fast and memory-frugal framework that utilizes sparsified genomics for tasks such as read mapping, containment search, and metagenomic profiling. It offers improved speed and memory efficiency compared to Minimap2.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "read_mapping",
+        "metagenomic_profiling",
+        "containment_search"
+      ],
+      "application_level": "solver",
+      "primary_language": "Roff",
+      "repo_url": "https://github.com/CMU-SAFARI/Genome-on-Diet",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "read-mapping",
+        "sparsification",
+        "metagenomics",
+        "memory-efficient"
+      ],
+      "id": 19
+    },
+    {
+      "name": "SneakySnake",
+      "one_line_profile": "Pre-alignment filtering algorithm to accelerate read mapping on heterogeneous hardware",
+      "detailed_description": "SneakySnake is a pre-alignment filtering algorithm designed to work efficiently on CPU, FPGA, and GPU architectures. It accelerates sequence alignment by filtering out incorrect candidate locations before performing expensive alignment calculations.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "pre_alignment_filtering",
+        "alignment_acceleration"
+      ],
+      "application_level": "solver",
+      "primary_language": "VHDL",
+      "repo_url": "https://github.com/CMU-SAFARI/SneakySnake",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "filtering",
+        "alignment",
+        "fpga",
+        "gpu",
+        "acceleration"
+      ],
+      "id": 20
+    },
+    {
+      "name": "RapMap",
+      "one_line_profile": "Rapid and sensitive read mapping tool via quasi-mapping",
+      "detailed_description": "RapMap is a tool for rapid, sensitive, and accurate read mapping. It introduces the concept of quasi-mapping to speed up the alignment process for transcriptomic and genomic data.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "read_mapping",
+        "quasi_mapping"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/COMBINE-lab/RapMap",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "read-mapping",
+        "quasi-mapping",
+        "ngs",
+        "alignment"
+      ],
+      "id": 21
+    },
+    {
+      "name": "piscem",
+      "one_line_profile": "Next-generation index and mapper for sequencing data",
+      "detailed_description": "Piscem is a rust-based wrapper and implementation for next-generation indexing and mapping, designed to work with tools like simpleaf and alevin-fry for efficient sequence analysis.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "read_mapping",
+        "indexing"
+      ],
+      "application_level": "solver",
+      "primary_language": "Rust",
+      "repo_url": "https://github.com/COMBINE-lab/piscem",
+      "help_website": [],
+      "license": "BSD-3-Clause",
+      "tags": [
+        "rust",
+        "indexing",
+        "read-mapping",
+        "bioinformatics"
+      ],
+      "id": 22
+    },
+    {
+      "name": "NextGenMap",
+      "one_line_profile": "Highly sensitive short read mapper handling high mismatch rates",
+      "detailed_description": "NextGenMap is a flexible and highly sensitive short read mapping tool. It is designed to handle much higher mismatch rates than comparable algorithms while maintaining high performance, making it suitable for datasets with high SNP rates or error rates.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "read_mapping",
+        "alignment"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/Cibiv/NextGenMap",
+      "help_website": [
+        "http://cibiv.github.io/NextGenMap/"
+      ],
+      "license": "NOASSERTION",
+      "tags": [
+        "short-read-mapping",
+        "alignment",
+        "ngs",
+        "high-sensitivity"
+      ],
+      "id": 23
+    },
+    {
+      "name": "Cactus",
+      "one_line_profile": "Reference-free whole-genome multiple sequence alignment tool",
+      "detailed_description": "Cactus is a reference-free whole-genome multiple sequence alignment program. It uses Cactus graphs to generate multiple genome alignments and is capable of handling large-scale comparative genomics tasks.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "whole_genome_alignment",
+        "multiple_sequence_alignment"
+      ],
+      "application_level": "solver",
+      "primary_language": "C",
+      "repo_url": "https://github.com/ComparativeGenomicsToolkit/cactus",
+      "help_website": [],
+      "license": "NOASSERTION",
+      "tags": [
+        "genome-alignment",
+        "msa",
+        "comparative-genomics",
+        "cactus-graph"
+      ],
+      "id": 24
+    },
+    {
+      "name": "HISAT2",
+      "one_line_profile": "Graph-based alignment system for mapping next-generation sequencing reads",
+      "detailed_description": "HISAT2 is a fast and sensitive alignment program for mapping next-generation sequencing reads (both DNA and RNA) to a population of human genomes as well as to a single reference genome. It uses a graph-based alignment strategy (Hierarchical Graph FM index) to accurately map reads, particularly those spanning splice junctions.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "sequence_alignment",
+        "read_mapping",
+        "splice_aware_alignment"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/DaehwanKimLab/hisat2",
+      "help_website": [
+        "http://daehwankimlab.github.io/hisat2/"
+      ],
+      "license": "GPL-3.0",
+      "tags": [
+        "rna-seq",
+        "alignment",
+        "ngs",
+        "graph-alignment"
+      ],
+      "id": 25
+    },
+    {
+      "name": "Block Aligner",
+      "one_line_profile": "SIMD-accelerated library for adaptive block-based sequence alignment",
+      "detailed_description": "Block Aligner is a Rust library (with C bindings) for computing global and X-drop affine gap penalty sequence-to-sequence or sequence-to-profile alignments. It utilizes an adaptive block-based algorithm accelerated with SIMD instructions (AVX2, NEON, WASM SIMD128) to achieve high performance.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "sequence_alignment",
+        "pairwise_alignment"
+      ],
+      "application_level": "library",
+      "primary_language": "Rust",
+      "repo_url": "https://github.com/Daniel-Liu-c0deb0t/block-aligner",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "simd",
+        "alignment-algorithm",
+        "smith-waterman",
+        "bioinformatics-library"
+      ],
+      "id": 26
+    },
+    {
+      "name": "deBWT",
+      "one_line_profile": "Parallel BWT construction tool for large genomes",
+      "detailed_description": "deBWT is an efficient and parallel tool for constructing the Burrows-Wheeler Transform (BWT) of large DNA sequences. It is particularly useful for indexing gigantic and highly similar genomes, serving as a foundational step for many sequence alignment tools.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "indexing",
+        "bwt_construction",
+        "genome_indexing"
+      ],
+      "application_level": "solver",
+      "primary_language": "C",
+      "repo_url": "https://github.com/DixianZhu/deBWT",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "bwt",
+        "indexing",
+        "genome-assembly",
+        "parallel-computing"
+      ],
+      "id": 27
+    },
+    {
+      "name": "ESR-NZ Human Genomics Pipeline",
+      "one_line_profile": "Snakemake workflow for Illumina WGS/WES data processing",
+      "detailed_description": "A comprehensive Snakemake workflow designed to process single samples or cohorts of Illumina paired-end sequencing data (Whole Genome Sequencing or Whole Exome Sequencing). It integrates tools like Trim Galore, BWA, GATK4, and Parabricks for alignment and variant calling.",
+      "domains": [
+        "B1",
+        "B1-02",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "workflow",
+        "wgs_analysis",
+        "wes_analysis",
+        "variant_calling"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/ESR-NZ/human_genomics_pipeline",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "snakemake",
+        "pipeline",
+        "wgs",
+        "wes",
+        "gatk"
+      ],
+      "id": 28
+    },
+    {
+      "name": "Infernal",
+      "one_line_profile": "RNA secondary structure and sequence profile alignment tool",
+      "detailed_description": "Infernal (INFERence of RNA ALignment) is a software package for searching DNA sequence databases for RNA structure and sequence similarities. It implements Covariance Models (CMs) to score a combination of sequence consensus and RNA secondary structure consensus, widely used by the Rfam database.",
+      "domains": [
+        "B1",
+        "B1-02",
+        "B2"
+      ],
+      "subtask_category": [
+        "homology_search",
+        "rna_alignment",
+        "structure_profiling"
+      ],
+      "application_level": "solver",
+      "primary_language": "C",
+      "repo_url": "https://github.com/EddyRivasLab/infernal",
+      "help_website": [
+        "http://eddylab.org/infernal/"
+      ],
+      "license": "BSD-3-Clause",
+      "tags": [
+        "rna",
+        "covariance-models",
+        "homology-search",
+        "alignment"
+      ],
+      "id": 29
+    },
+    {
+      "name": "elPrep",
+      "one_line_profile": "High-performance tool for analyzing and processing sequence alignment/map files (SAM/BAM)",
+      "detailed_description": "elPrep is a high-performance tool for preparing sequence alignment/map files for variant calling in sequencing pipelines. It can be used as a drop-in replacement for SAMtools and Picard, offering multi-threaded execution to significantly speed up processing steps like sorting, deduplication, and recalibration.",
+      "domains": [
+        "Bioinfo/Genomics",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "alignment_processing",
+        "sorting",
+        "deduplication"
+      ],
+      "application_level": "solver",
+      "primary_language": "Go",
+      "repo_url": "https://github.com/ExaScience/elprep",
+      "help_website": [
+        "http://elprep.exascience.com/"
+      ],
+      "license": "NOASSERTION",
+      "tags": [
+        "sam-bam-processing",
+        "high-performance",
+        "bioinformatics"
+      ],
+      "id": 30
+    },
+    {
+      "name": "map_viruses",
+      "one_line_profile": "Tool to align short reads against viral genomes in protein space",
+      "detailed_description": "A Python-based tool designed to align short sequencing reads against viral genomes by mapping in protein space. This approach allows for the detection of viral sequences that may have diverged at the nucleotide level but remain conserved at the amino acid level.",
+      "domains": [
+        "Bioinfo/Genomics",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "viral_alignment",
+        "protein_mapping"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/FredHutch/map_viruses",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "viral-genomics",
+        "alignment",
+        "protein-space"
+      ],
+      "id": 31
+    },
+    {
+      "name": "sra-pipeline",
+      "one_line_profile": "Pipeline for downloading SRA files and performing alignment via Bowtie2",
+      "detailed_description": "A workflow developed by Fred Hutch to automate the retrieval of Sequence Read Archive (SRA) files, convert them using fastq_dump, and perform sequence alignment using Bowtie2, with output directed to S3 storage.",
+      "domains": [
+        "Bioinfo/Genomics",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "data_retrieval",
+        "sequence_alignment",
+        "workflow"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/FredHutch/sra-pipeline",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "sra",
+        "bowtie2",
+        "pipeline"
+      ],
+      "id": 32
+    },
+    {
+      "name": "Yaha",
+      "one_line_profile": "Flexible and sensitive DNA alignment tool for split-read mappings",
+      "detailed_description": "Yaha is a DNA alignment tool designed to find optimal split-read mappings on single-end queries ranging from 100bp to 32kb. It is particularly useful for detecting structural variants and handling difficult alignment scenarios.",
+      "domains": [
+        "Bioinfo/Genomics",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "sequence_alignment",
+        "split_read_mapping"
+      ],
+      "application_level": "solver",
+      "primary_language": "C",
+      "repo_url": "https://github.com/GregoryFaust/yaha",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "dna-alignment",
+        "split-reads",
+        "structural-variants"
+      ],
+      "id": 33
+    },
+    {
+      "name": "Clair3",
+      "one_line_profile": "Deep learning-based long-read variant caller using pileup and full-alignment models",
+      "detailed_description": "Clair3 is a high-performance variant caller for long-read sequencing data (PacBio, Oxford Nanopore). It utilizes a deep learning approach that combines pileup and full-alignment models to achieve high accuracy and speed in variant detection.",
+      "domains": [
+        "Bioinfo/Genomics",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "variant_calling",
+        "long_read_analysis",
+        "deep_learning"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/HKU-BAL/Clair3",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "variant-calling",
+        "long-reads",
+        "deep-learning"
+      ],
+      "id": 34
+    },
+    {
+      "name": "alignment-nf",
+      "one_line_profile": "Nextflow pipeline for Whole Exome/Genome Sequencing alignment",
+      "detailed_description": "A bioinformatics pipeline built with Nextflow for aligning Whole Exome Sequencing (WES) and Whole Genome Sequencing (WGS) data. It automates the alignment process, ensuring reproducibility and scalability.",
+      "domains": [
+        "Bioinfo/Genomics",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "sequence_alignment",
+        "pipeline",
+        "wgs",
+        "wes"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Nextflow",
+      "repo_url": "https://github.com/IARCbioinfo/alignment-nf",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "nextflow",
+        "alignment",
+        "pipeline"
+      ],
+      "id": 35
+    },
+    {
+      "name": "NanoPipe2",
+      "one_line_profile": "Analysis pipeline for Oxford Nanopore sequencing reads",
+      "detailed_description": "NanoPipe2 is a pipeline designed for analyzing reads generated by Oxford Nanopore sequencing devices. It provides alignments to target sequences, calculates alignment statistics, and offers information about polymorphisms.",
+      "domains": [
+        "Bioinfo/Genomics",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "nanopore_analysis",
+        "sequence_alignment",
+        "polymorphism_detection"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Perl",
+      "repo_url": "https://github.com/IOB-Muenster/nanopipe2",
+      "help_website": [
+        "http://nanopipe.uni-muenster.de/"
+      ],
+      "license": "Apache-2.0",
+      "tags": [
+        "nanopore",
+        "pipeline",
+        "alignment"
+      ],
+      "id": 36
+    },
+    {
+      "name": "MA",
+      "one_line_profile": "Modular Aligner and Structural Variant Caller for genomic sequences",
+      "detailed_description": "MA (The Modular Aligner) is a high-performance tool designed for aligning sequencing reads and calling structural variants (SVs). It employs a modular architecture to facilitate the development and integration of new alignment and calling algorithms.",
+      "domains": [
+        "B1-02",
+        "B1-03"
+      ],
+      "subtask_category": [
+        "sequence_alignment",
+        "variant_calling"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/ITBE-Lab/MA",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "aligner",
+        "structural-variants",
+        "genomics"
+      ],
+      "id": 37
+    },
+    {
+      "name": "ClipKIT",
+      "one_line_profile": "Multiple sequence alignment trimming algorithm for phylogenomic inference",
+      "detailed_description": "ClipKIT is a tool for trimming multiple sequence alignments (MSAs) to remove phylogenetically uninformative sites. It aims to improve the accuracy of phylogenomic inference while retaining more sites than traditional trimming methods.",
+      "domains": [
+        "B1-01",
+        "B1-04"
+      ],
+      "subtask_category": [
+        "msa_trimming",
+        "phylogenetics"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/JLSteenwyk/ClipKIT",
+      "help_website": [
+        "https://clipkit.readthedocs.io"
+      ],
+      "license": "MIT",
+      "tags": [
+        "phylogenomics",
+        "msa",
+        "trimming"
+      ],
+      "id": 38
+    },
+    {
+      "name": "PhyKIT",
+      "one_line_profile": "UNIX shell toolkit for processing multiple sequence alignments and phylogenies",
+      "detailed_description": "PhyKIT provides a suite of command-line tools for processing and analyzing multiple sequence alignments (MSAs) and phylogenetic trees. It includes functions for calculating alignment properties, manipulating tree structures, and computing phylogenetic statistics.",
+      "domains": [
+        "B1-04",
+        "B1-01"
+      ],
+      "subtask_category": [
+        "phylogenetics",
+        "msa_processing"
+      ],
+      "application_level": "solver",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/JLSteenwyk/PhyKIT",
+      "help_website": [
+        "https://phykit.readthedocs.io"
+      ],
+      "license": "MIT",
+      "tags": [
+        "phylogenetics",
+        "bioinformatics",
+        "toolkit"
+      ],
+      "id": 39
+    },
+    {
+      "name": "AliNe",
+      "one_line_profile": "Nextflow pipeline for aligning sequencing reads to reference genomes",
+      "detailed_description": "AliNe is a bioinformatics pipeline built with Nextflow that automates the process of aligning raw sequencing reads (FASTQ) to a reference genome, producing sorted and indexed BAM files suitable for downstream analysis.",
+      "domains": [
+        "B1-02"
+      ],
+      "subtask_category": [
+        "sequence_alignment",
+        "pipeline"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Nextflow",
+      "repo_url": "https://github.com/Juke34/AliNe",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "nextflow",
+        "alignment",
+        "ngs"
+      ],
+      "id": 40
+    },
+    {
+      "name": "SOSTAR",
+      "one_line_profile": "Pipeline for fine mapping of RNA isoform diversity using targeted long-read RNA sequencing",
+      "detailed_description": "SOSTAR (iSofOrmS annoTAtoR) is a bioinformatics pipeline designed for the analysis of targeted long-read RNA sequencing data. It focuses on the fine mapping of RNA isoform diversity, enabling precise annotation and characterization of isoforms as described in BMC Genomics 25, 909 (2024).",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "isoform_annotation",
+        "long_read_analysis",
+        "rna_seq_mapping"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/LBGC-CFB/SOSTAR",
+      "help_website": [],
+      "license": "GPL-3.0",
+      "tags": [
+        "long-read",
+        "isoforms",
+        "transcriptomics",
+        "annotation"
+      ],
+      "id": 41
+    },
+    {
+      "name": "SPEAQeasy",
+      "one_line_profile": "Portable and reproducible RNA-seq analysis pipeline using Nextflow",
+      "detailed_description": "SPEAQeasy is a portable RNA-seq data processing pipeline developed by the Lieber Institute for Brain Development (LIBD). Built with Nextflow and Docker/Singularity, it provides a reproducible workflow for aligning reads, quantifying gene expression, and performing quality control on RNA-seq datasets.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "rna_seq_workflow",
+        "quality_control",
+        "expression_quantification"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Nextflow",
+      "repo_url": "https://github.com/LieberInstitute/SPEAQeasy",
+      "help_website": [
+        "http://research.libd.org/SPEAQeasy-example/"
+      ],
+      "license": "MIT",
+      "tags": [
+        "rna-seq",
+        "nextflow",
+        "pipeline",
+        "reproducibility"
+      ],
+      "id": 42
+    },
+    {
+      "name": "Wochenende",
+      "one_line_profile": "Whole genome and metagenome sequencing alignment pipeline",
+      "detailed_description": "A pipeline for whole genome and metagenome sequencing alignment, integrating alignment, quality control, and reporting steps. Note: This version is deprecated in favor of the Nextflow implementation (nf_wochenende).",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "alignment",
+        "metagenomics",
+        "pipeline"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/MHH-RCUG/Wochenende",
+      "help_website": [
+        "https://github.com/MHH-RCUG/nf_wochenende"
+      ],
+      "license": "MIT",
+      "tags": [
+        "metagenomics",
+        "alignment",
+        "pipeline",
+        "ngs"
+      ],
+      "id": 43
+    },
+    {
+      "name": "sarlacc",
+      "one_line_profile": "Pipeline for Nanopore sequencing data analysis and consensus generation",
+      "detailed_description": "An R package designed to analyse nanopore sequencing data. It performs adapter trimming, UMI retrieval, read clustering, and produces consensus sequences for each cluster via multiple sequence alignment.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "alignment",
+        "consensus_calling",
+        "clustering"
+      ],
+      "application_level": "library",
+      "primary_language": "R",
+      "repo_url": "https://github.com/MarioniLab/sarlacc",
+      "help_website": [],
+      "license": null,
+      "tags": [
+        "nanopore",
+        "umi",
+        "consensus-sequence",
+        "r-package"
+      ],
+      "id": 44
+    },
+    {
+      "name": "Edlib",
+      "one_line_profile": "Lightweight and fast library for sequence alignment using edit distance",
+      "detailed_description": "A lightweight and super fast C/C++ library (with Python bindings) for sequence alignment using edit (Levenshtein) distance. It is widely used as a core component in other bioinformatics tools for string matching tasks.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "alignment",
+        "string_matching"
+      ],
+      "application_level": "library",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/Martinsos/edlib",
+      "help_website": [],
+      "license": "MIT",
+      "tags": [
+        "edit-distance",
+        "levenshtein",
+        "sequence-alignment",
+        "c-plus-plus"
+      ],
+      "id": 45
+    },
+    {
+      "name": "actc",
+      "one_line_profile": "Tool to align PacBio subreads to CCS reads",
+      "detailed_description": "A specialized tool from Pacific Biosciences to align raw subreads to Circular Consensus Sequencing (CCS) reads, aiding in the processing of PacBio long-read sequencing data.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "alignment",
+        "long_read_processing"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/PacificBiosciences/actc",
+      "help_website": [],
+      "license": "BSD-3-Clause-Clear",
+      "tags": [
+        "pacbio",
+        "alignment",
+        "ccs",
+        "subreads"
+      ],
+      "id": 46
+    },
+    {
+      "name": "pbmm2",
+      "one_line_profile": "Minimap2 frontend for PacBio native data formats",
+      "detailed_description": "A C++ wrapper for minimap2 specifically designed for Pacific Biosciences (PacBio) native data formats. It supports alignment of PacBio reads to reference genomes, preserving PacBio-specific metadata in BAM/XML outputs, and serves as the official aligner for PacBio workflows.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "alignment",
+        "mapping",
+        "long-read_alignment"
+      ],
+      "application_level": "solver",
+      "primary_language": "C++",
+      "repo_url": "https://github.com/PacificBiosciences/pbmm2",
+      "help_website": [
+        "https://github.com/PacificBiosciences/pbmm2"
+      ],
+      "license": "BSD-3-Clause-Clear",
+      "tags": [
+        "pacbio",
+        "minimap2",
+        "alignment",
+        "long-reads",
+        "genomics"
+      ],
+      "id": 47
+    },
+    {
+      "name": "rnaseq-pipeline",
+      "one_line_profile": "RNA-seq pipeline for alignment and quantification",
+      "detailed_description": "A Python-based automated pipeline for processing RNA-seq data. It orchestrates the workflow from raw sequence reads to gene and transcript quantification, performing alignment and necessary quality control steps.",
+      "domains": [
+        "B1",
+        "B1-02"
+      ],
+      "subtask_category": [
+        "rna-seq_analysis",
+        "alignment",
+        "quantification",
+        "workflow"
+      ],
+      "application_level": "workflow",
+      "primary_language": "Python",
+      "repo_url": "https://github.com/PavlidisLab/rnaseq-pipeline",
+      "help_website": [
+        "https://github.com/PavlidisLab/rnaseq-pipeline"
+      ],
+      "license": "Unlicense",
+      "tags": [
+        "rna-seq",
+        "pipeline",
+        "alignment",
+        "quantification",
+        "genomics"
+      ],
+      "id": 48
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+A1-01,FITS/观测数据IO与校准,200–450,"FITS libs、calibration pipelines"
+A1-02,源检测/测光/星表匹配,200–450,"detection、photometry、catalog match"
+A1-03,分类/异常检测（AI）,200–450,"CV/SSL、anomaly detection"
+A1-04,巡天数据管理/可视化平台,150–350,"portals、browsers"
+A1-05,Benchmark与复现,100–250,"datasets、metrics"
+
+A2-01,光变曲线预处理/去噪,150–300,"smoothing、denoise"
+A2-02,瞬变检测/触发/告警系统,150–350,"detection、alert brokers"
+A2-03,分类（时序AI）,200–450,"time-series transformers"
+A2-04,跟踪/调度/观测策略,100–250,"scheduling tools"
+A2-05,Benchmark与复现,100–200,"datasets、metrics"

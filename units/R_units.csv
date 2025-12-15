@@ -1,0 +1,12 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+R1-01,设备驱动/通信协议/接口层,150–350,"drivers、protocol stacks"
+R1-02,调度/队列/实验执行编排,150–350,"schedulers、orchestrators"
+R1-03,数据采集/ELN/LIMS 集成,150–300,"ELN/LIMS connectors"
+R1-04,故障诊断与监控（AI）,100–250,"anomaly detection、monitoring"
+R1-05,安全/权限/审计,80–200,"access control、provenance"
+
+R2-01,BO/AL 核心库与策略集合,200–450,"BO libs、AL strategies"
+R2-02,闭环平台与实验管理,100–250,"closed-loop platforms"
+R2-03,多目标/多保真优化,150–300,"multi-objective/multi-fidelity"
+R2-04,与机器人/模拟器联动,100–250,"connectors"
+R2-05,评测与可视化,100–200,"dashboards、benchmarks"
