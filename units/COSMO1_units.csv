@@ -1,0 +1,8 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+COSMO1-01,数值相对论求解器与GR场方程工具链,200–450,"GR PDE solvers、网格/AMR、边界/初值构造"
+COSMO1-02,引力波波形生成、后处理与分析生态,200–450,"waveform generation、filtering、parameter estimation prep"
+COSMO1-03,宇宙学N-body与大尺度结构模拟生态,250–600,"N-body codes、初始条件、halo finding、并行"
+COSMO1-04,宇宙学场模拟与再分析（网格场/辐射/流体）,200–450,"grid-based solvers、coupling、regridding"
+COSMO1-05,推断与统计：采样、贝叶斯、似然与压缩,250–600,"MCMC/SMC、likelihood tools、summary statistics"
+COSMO1-06,AI4Cosmo（加速模拟/替代模型/生成式）,200–450,"surrogates、diffusion/generative、emulators"
+COSMO1-07,数据管理、可视化与benchmark（cosmo专用）,150–350,"catalogs tooling、viz、benchmark harness"

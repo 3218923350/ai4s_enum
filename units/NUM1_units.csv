@@ -1,0 +1,9 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+NUM1-01,数值线性代数与稀疏求解器生态,250–600,"Sparse direct/iterative solvers、预条件、Krylov、AMG、矩阵分解库"
+NUM1-02,PDE 离散与通用求解框架（FDM/FEM/FVM）,250–600,"离散框架、装配、边界条件、网格/单元、弱形式工具链"
+NUM1-03,谱方法与高阶方法（Galerkin/谱元/高阶FEM）,200–450,"谱/谱元库、基函数、误差估计、高阶装配与求解"
+NUM1-04,时间积分与多尺度数值方法（ODE/DAE/SDE）,200–450,"stiff integrators、DAE、事件处理、多速率、多步法"
+NUM1-05,随机模拟与蒙特卡洛（含MCMC/SMC）,250–600,"MC/MCMC、采样器、方差缩减、随机微分、并行采样"
+NUM1-06,反问题、优化与数据同化（数值侧）,250–600,"inverse solvers、adjoint、EnKF/4DVar、正则化、PDE-constrained optimization"
+NUM1-07,可微分科学计算与自动微分（diff. programming）,200–450,"AD 框架、可微分求解器、可微分 PDE/ODE、梯度验证"
+NUM1-08,数值验证与基准（误差/收敛/制造解）,150–350,"manufactured solutions、误差分析工具、回归测试 harness、benchmark suites"

@@ -16,7 +16,7 @@ def safe_request(
     json_data=None,
     timeout: int = 30,
     max_retries: int = 3,
-    backoff_base: float = 2,
+    backoff_base: float = 1.5,
     retry_statuses: Iterable[int] = (429, 500, 502, 503, 504),
 ) -> Optional[object]:
     """通用带重试的 HTTP 请求。成功(<400)返回 Response，否则返回 None。"""
@@ -46,7 +46,7 @@ def safe_request(
             if attempt == max_retries:
                 logger.warning(f"请求失败 ({max_retries} 次重试后) | url={url[:80]}, error={e}")
                 return None
-            sleep_time = (backoff_base**attempt) + random.uniform(1, 20)
+            sleep_time = (backoff_base**attempt) + random.uniform(0, 0.5)
             logger.warning(f"请求错误，即将重试 | attempt={attempt}/{max_retries}, retry_in={sleep_time:.1f}s, error={e}")
             time.sleep(sleep_time)
 

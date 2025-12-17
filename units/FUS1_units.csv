@@ -1,0 +1,9 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+FUS1-01,等离子体/聚变核心仿真器（MHD/gyrokinetic/PIC）,250–600,"主流开源/开放代码、求解框架、并行/GPU支持"
+FUS1-02,装置几何、网格与磁约束建模工具链,200–450,"geometry/CAD、磁场/线圈建模、网格生成与适配"
+FUS1-03,输运、稳定性与湍流模型库,200–450,"transport solvers、stability analysis、closure/models"
+FUS1-04,诊断数据处理与反演（成像/谱/信号）,200–500,"diagnostics pipelines、tomography、spectroscopy inversion"
+FUS1-05,数据同化、状态估计与不确定性量化,200–450,"DA/UQ、滤波、贝叶斯推断、误差传播"
+FUS1-06,运行控制与优化（含实时控制/策略搜索）,150–350,"control frameworks、MPC/RL、参数优化、约束处理"
+FUS1-07,AI4Fusion（替代模型/加速/闭环）,200–450,"surrogate、operator learning、active learning、闭环平台"
+FUS1-08,工作流/HPC/可复现执行与数据管理,150–350,"workflow、容器、作业调度、数据格式与归档"

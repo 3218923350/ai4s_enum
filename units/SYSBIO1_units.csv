@@ -1,0 +1,9 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+SYSBIO1-01,系统生物学建模语言与模型表示（SBML等）,200–450,"model formats、parsers、validators、conversion"
+SYSBIO1-02,ODE/PDE 仿真与动力学求解器生态,250–600,"deterministic/stochastic solvers、events、stiff systems"
+SYSBIO1-03,参数估计、模型校准与反演,200–450,"optimization、Bayesian inference、identifiability"
+SYSBIO1-04,敏感性分析与不确定性量化（生物动力学）,200–450,"global/local sensitivity、UQ、ensemble"
+SYSBIO1-05,代谢网络与约束建模（FBA等）,200–450,"constraint-based modeling、network tools"
+SYSBIO1-06,多尺度/多组学耦合动力学与混合模型,200–450,"hybrid models、coupling frameworks"
+SYSBIO1-07,AI4SysBio（替代模型/推断加速/闭环设计）,200–450,"surrogates、neural ODE、active learning"
+SYSBIO1-08,评测、复现与工作流（benchmark/CI）,150–350,"benchmark suites、pipelines、regression tests"
