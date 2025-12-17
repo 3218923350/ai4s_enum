@@ -38,8 +38,8 @@ def github_search(cfg: EnumConfig, query: str, *, pages: int = 2, per_page: int 
                 "per_page": per_page,
                 "page": page,
             },
-            timeout=30,
-            max_retries=3,
+            timeout=90,
+            max_retries=40,
         )
         if resp is None:
             continue
@@ -48,7 +48,7 @@ def github_search(cfg: EnumConfig, query: str, *, pages: int = 2, per_page: int 
             repos.extend(items)
         except Exception as e:
             logger.warning(f"GitHub 搜索响应解析失败 | error={e}")
-        time.sleep(0.2)
+        time.sleep(5)
     return repos
 
 
@@ -92,8 +92,8 @@ def github_graphql_enrich(cfg: EnumConfig, full_names: Iterable[str]) -> Dict[st
             cfg.github_graphql_url,
             headers={"Authorization": f"Bearer {cfg.github_token}"},
             json_data={"query": query},
-            timeout=30,
-            max_retries=3,
+            timeout=90,
+            max_retries=40,
         )
         if resp is None:
             continue
@@ -122,8 +122,8 @@ def web_search(cfg: EnumConfig, query: str, *, num: int = 10) -> List[str]:
         "GET",
         f"{cfg.search_base_url}api/v1/search",
         params={"q": query, "engine": "google", "num": num, "api_key": cfg.search_key},
-        timeout=30,
-        max_retries=3,
+        timeout=90,
+        max_retries=40,
     )
     if resp is None:
         return []

@@ -210,7 +210,7 @@ def _enrich_batch(
             "messages": [{"role": "user", "content": prompt}],
         },
         timeout=600,
-        max_retries=2,
+        max_retries=40,
     )
 
     if resp is None:

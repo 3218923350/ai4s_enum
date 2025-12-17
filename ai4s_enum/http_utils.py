@@ -46,7 +46,7 @@ def safe_request(
             if attempt == max_retries:
                 logger.warning(f"请求失败 ({max_retries} 次重试后) | url={url[:80]}, error={e}")
                 return None
-            sleep_time = (backoff_base**attempt) + random.uniform(0, 0.5)
+            sleep_time = (backoff_base**attempt) + random.uniform(0, 20)
             logger.warning(f"请求错误，即将重试 | attempt={attempt}/{max_retries}, retry_in={sleep_time:.1f}s, error={e}")
             time.sleep(sleep_time)
 

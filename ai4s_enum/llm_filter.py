@@ -74,7 +74,7 @@ def gemini_analyze(cfg: EnumConfig, *, unit_id: str, unit_name: str, repo_meta: 
         f"{cfg.gemini_api_base.rstrip('/')}/chat/completions",
         headers={"Authorization": f"Bearer {cfg.gemini_api_key}", "Content-Type": "application/json"},
         json={"model": cfg.gemini_model, "temperature": 0.1, "messages": [{"role": "user", "content": prompt}]},
-        timeout=90,
+        timeout=500,
     )
     r.raise_for_status()
     content = r.json()["choices"][0]["message"]["content"]

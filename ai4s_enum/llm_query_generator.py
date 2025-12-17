@@ -87,8 +87,8 @@ def llm_generate_queries(
             "temperature": 0.3,
             "messages": [{"role": "user", "content": prompt}],
         },
-        timeout=60,
-        max_retries=2,
+        timeout=500,
+        max_retries=40,
     )
 
     if resp is None:
