@@ -76,8 +76,9 @@ def _enrich_batch(
     cluster: LeafCluster,
     unit: Unit,
     batch: List[dict],
+    max_parse_retries: int = 3,
 ) -> List[dict]:
-    """处理单批候选"""
+    """处理单批候选，支持 JSON 解析失败时的重试"""
     
     # 构建候选列表的简要信息
     candidates_info = []
@@ -197,59 +198,142 @@ def _enrich_batch(
 3. 严格执行三条硬规则，**宁可漏掉边缘工具，也不要混入噪声**
 """
 
-    resp = safe_request(
-        "POST",
-        f"{cfg.gemini_api_base}/chat/completions",
-        headers={
-            "Authorization": f"Bearer {cfg.gemini_api_key}",
-            "Content-Type": "application/json",
-        },
-        json_data={
-            "model": cfg.gemini_model,
-            "temperature": 0.2,
-            "messages": [{"role": "user", "content": prompt}],
-        },
-        timeout=600,
-        max_retries=40,
-    )
+    # 支持 JSON 解析失败时的重试
+    for parse_attempt in range(1, max_parse_retries + 1):
+        resp = safe_request(
+            "POST",
+            f"{cfg.gemini_api_base}/chat/completions",
+            headers={
+                "Authorization": f"Bearer {cfg.gemini_api_key}",
+                "Content-Type": "application/json",
+            },
+            json_data={
+                "model": cfg.gemini_model,
+                "temperature": 0.1,
+                "messages": [{"role": "user", "content": prompt}],
+            },
+            timeout=6000,
+            max_retries=40,
+        )
 
-    if resp is None:
-        logger.warning(f"LLM enrichment 失败 | 批次大小={len(batch)}")
-        return []
+        if resp is None:
+            if parse_attempt == max_parse_retries:
+                logger.warning(f"LLM enrichment HTTP 请求失败 | 批次大小={len(batch)}, 已重试 {max_parse_retries} 次")
+                return []
+            logger.warning(f"LLM enrichment HTTP 请求失败，重试中 | attempt={parse_attempt}/{max_parse_retries}")
+            continue
 
-    try:
-        content = resp.json()["choices"][0]["message"]["content"]
-        # 去除可能的 markdown 代码块
-        content = content.strip()
-        if content.startswith("```"):
-            lines = content.split("\n")
-            # 找到第一个和最后一个 ```
-            start_idx = 0
-            end_idx = len(lines)
-            for i, line in enumerate(lines):
-                if line.strip().startswith("```"):
-                    if start_idx == 0:
-                        start_idx = i + 1
-                    else:
-                        end_idx = i
-                        break
-            content = "\n".join(lines[start_idx:end_idx])
-        
-        results = json.loads(content)
-        
-        # 提取 is_tool=true 的工具，并补充 id
-        tools: List[dict] = []
-        for item in results:
-            if not isinstance(item, dict):
+        # 检查响应状态码
+        if resp.status_code >= 400:
+            logger.warning(f"LLM API 返回错误状态码 | status={resp.status_code}, attempt={parse_attempt}/{max_parse_retries}")
+            if parse_attempt < max_parse_retries:
                 continue
-            if item.get("is_tool"):
-                tool = {k: v for k, v in item.items() if k != "idx" and k != "is_tool"}
-                tools.append(tool)
-        
-        logger.debug(f"批次解析成功 | 识别工具数={len(tools)}/{len(batch)}")
-        return tools
-        
-    except Exception as e:
-        logger.warning(f"LLM enrichment 响应解析失败 | error={e}")
-        return []
+            return []
+
+        try:
+            # 检查响应体是否为空
+            response_text = resp.text
+            if not response_text or not response_text.strip():
+                logger.warning(f"LLM API 返回空响应 | attempt={parse_attempt}/{max_parse_retries}")
+                if parse_attempt < max_parse_retries:
+                    continue
+                return []
+
+            # 尝试解析 JSON
+            try:
+                response_json = resp.json()
+            except ValueError as json_err:
+                logger.warning(
+                    f"LLM API 响应不是有效 JSON | attempt={parse_attempt}/{max_parse_retries}, "
+                    f"error={json_err}, response_preview={response_text[:200]}"
+                )
+                if parse_attempt < max_parse_retries:
+                    continue
+                return []
+
+            # 检查响应结构
+            if "choices" not in response_json:
+                logger.warning(
+                    f"LLM API 响应缺少 'choices' 字段 | attempt={parse_attempt}/{max_parse_retries}, "
+                    f"response_keys={list(response_json.keys())}"
+                )
+                if parse_attempt < max_parse_retries:
+                    continue
+                return []
+
+            if not response_json["choices"] or len(response_json["choices"]) == 0:
+                logger.warning(f"LLM API 响应 'choices' 为空 | attempt={parse_attempt}/{max_parse_retries}")
+                if parse_attempt < max_parse_retries:
+                    continue
+                return []
+
+            content = response_json["choices"][0]["message"]["content"]
+            
+            # 去除可能的 markdown 代码块
+            content = content.strip()
+            if content.startswith("```"):
+                lines = content.split("\n")
+                # 找到第一个和最后一个 ```
+                start_idx = 0
+                end_idx = len(lines)
+                for i, line in enumerate(lines):
+                    if line.strip().startswith("```"):
+                        if start_idx == 0:
+                            start_idx = i + 1
+                        else:
+                            end_idx = i
+                            break
+                content = "\n".join(lines[start_idx:end_idx])
+            
+            # 解析内容为 JSON 数组
+            results = json.loads(content)
+            
+            # 验证结果格式
+            if not isinstance(results, list):
+                logger.warning(
+                    f"LLM 返回内容不是 JSON 数组 | attempt={parse_attempt}/{max_parse_retries}, "
+                    f"type={type(results)}, content_preview={content[:200]}"
+                )
+                if parse_attempt < max_parse_retries:
+                    continue
+                return []
+            
+            # 提取 is_tool=true 的工具，并补充 id
+            tools: List[dict] = []
+            for item in results:
+                if not isinstance(item, dict):
+                    continue
+                if item.get("is_tool"):
+                    tool = {k: v for k, v in item.items() if k != "idx" and k != "is_tool"}
+                    tools.append(tool)
+            
+            logger.debug(f"批次解析成功 | 识别工具数={len(tools)}/{len(batch)}")
+            return tools
+            
+        except json.JSONDecodeError as json_err:
+            logger.warning(
+                f"LLM 响应内容 JSON 解析失败 | attempt={parse_attempt}/{max_parse_retries}, "
+                f"error={json_err}, content_preview={content[:200] if 'content' in locals() else 'N/A'}"
+            )
+            if parse_attempt < max_parse_retries:
+                continue
+            return []
+        except KeyError as key_err:
+            logger.warning(
+                f"LLM 响应结构异常 | attempt={parse_attempt}/{max_parse_retries}, "
+                f"missing_key={key_err}, response_keys={list(response_json.keys()) if 'response_json' in locals() else 'N/A'}"
+            )
+            if parse_attempt < max_parse_retries:
+                continue
+            return []
+        except Exception as e:
+            logger.warning(
+                f"LLM enrichment 响应解析失败 | attempt={parse_attempt}/{max_parse_retries}, "
+                f"error={e}, error_type={type(e).__name__}"
+            )
+            if parse_attempt < max_parse_retries:
+                continue
+            return []
+    
+    return []
 
