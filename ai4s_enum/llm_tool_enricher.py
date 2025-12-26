@@ -222,7 +222,7 @@ def _enrich_batch(
                 return []
             logger.warning(f"LLM enrichment HTTP 请求失败，重试中 | attempt={parse_attempt}/{max_parse_retries}")
             continue
-
+        logger.info("resp",resp)
         # 检查响应状态码
         if resp.status_code >= 400:
             logger.warning(f"LLM API 返回错误状态码 | status={resp.status_code}, attempt={parse_attempt}/{max_parse_retries}")
@@ -268,7 +268,7 @@ def _enrich_batch(
                 return []
 
             content = response_json["choices"][0]["message"]["content"]
-            
+            print("content",content)
             # 去除可能的 markdown 代码块
             content = content.strip()
             if content.startswith("```"):
