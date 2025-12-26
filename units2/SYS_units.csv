@@ -1,0 +1,6 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+SYS1-01,网络分析与图算法工具链,250–600,"network analysis libs"
+SYS1-02,传播、流行病与扩散动力学,200–450,"diffusion/epidemic simulators"
+SYS1-03,系统风险、稳定性与级联失效,150–350,"systemic risk、cascades"
+SYS1-04,复杂系统推断与机制识别,200–450,"system identification、inference"
+SYS1-05,AI4ComplexSystems（仿真加速/控制）,150–350,"surrogate/control"

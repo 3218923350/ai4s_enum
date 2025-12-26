@@ -1,0 +1,8 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+EDA1-01,HDL开发、仿真与验证（RTL）,250–600,"simulators、testbench、lint"
+EDA1-02,逻辑综合与形式化验证,200–450,"synth、formal verification"
+EDA1-03,物理设计（P&R/版图/DRC/LVS）,250–600,"place&route、layout check"
+EDA1-04,SPICE/器件建模与电路级仿真,250–600,"SPICE engines、device models"
+EDA1-05,PCB与系统级电子设计,200–450,"PCB CAD、SI/PI工具"
+EDA1-06,测试、DFT与硬件测量接口,150–350,"DFT、ATE、measurement tooling"
+EDA1-07,AI4EDA（布图布线/预测/加速）,200–450,"placement models、timing/power ML"

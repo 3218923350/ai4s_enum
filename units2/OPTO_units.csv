@@ -1,0 +1,7 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+OPTO1-01,光学设计与光线追踪,200–450,"ray tracing、lens design"
+OPTO1-02,波光学与电磁-光学仿真（近场/衍射）,200–450,"wave optics、diffraction"
+OPTO1-03,计算成像与重建（显微/CT/相位）,250–600,"reconstruction、deconvolution"
+OPTO1-04,光谱学与谱数据解析,200–450,"spectroscopy parsing/analysis"
+OPTO1-05,显微/相机控制与采集（与INST1交叉）,150–350,"acquisition control、drivers"
+OPTO1-06,AI4Imaging/Optics（去噪/超分/重建）,200–450,"DL reconstruction、denoise"

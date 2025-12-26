@@ -1,0 +1,7 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+OR1-01,线性/整数规划求解器与建模语言,250–600,"LP/MILP、modeling languages"
+OR1-02,约束规划与组合优化,200–450,"CP、SAT/SMT相关工具"
+OR1-03,图优化与网络流/路径规划,200–450,"shortest path、flow、matching"
+OR1-04,调度与资源分配（工业/科研）,200–450,"scheduling frameworks"
+OR1-05,鲁棒/随机优化与分布式优化,200–450,"robust/stochastic optimization"
+OR1-06,AI4OR（学习增强优化/heuristics）,150–350,"learning to optimize、LNS"

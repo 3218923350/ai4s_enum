@@ -1,0 +1,20 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+AI7-01,传统ML与表格学习（含特征工程）,250–600,"tabular ML、特征选择、校准"
+AI7-02,图机器学习与图表示学习,250–600,"GNN框架、图采样、图数据管线"
+AI7-03,时间序列与时空建模,250–600,"forecasting、state-space、spatiotemporal"
+AI7-04,概率编程与贝叶斯推断,200–450,"PPL、VI、MCMC、SMC工具"
+AI7-05,因果推断与机制学习,200–450,"SCM、因果估计、反事实"
+AI7-06,可解释性与归因/反事实解释,200–450,"XAI框架、解释与探针"
+AI7-07,AutoML/超参搜索/实验设计,200–450,"HPO、NAS、BO、实验管理"
+
+AI8-01,通用CV训练推理与模型库,250–600,"detection/segmentation/classification"
+AI8-02,3D/点云/几何学习（含NeRF）,250–600,"point cloud、mesh、NeRF工具链"
+AI8-03,视频理解与时空感知,200–450,"tracking、event、video models"
+AI8-04,音频/语音/信号深度学习,200–450,"ASR、audio toolkits、DSP+DL"
+AI8-05,多模态对齐与跨模态检索,200–450,"vision-language、alignment、retrieval"
+
+AI9-01,量化/蒸馏/剪枝与稀疏化,250–600,"PTQ/QAT、distill、prune"
+AI9-02,推理编译与图优化（编译器/IR）,250–600,"compile、graph optimize、kernels"
+AI9-03,Serving与高吞吐推理（批处理/路由）,200–450,"serving、batching、routing"
+AI9-04,端侧/边缘推理与加速,200–450,"mobile/embedded runtimes"
+AI9-05,性能剖析与推理基准套件,200–450,"profilers、benchmarks、eval harness"

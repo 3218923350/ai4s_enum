@@ -1,0 +1,6 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+EM1-01,全波电磁求解器（FDTD/FEM/MoM等）,250–600,"EM solvers、meshing、HPC"
+EM1-02,天线/阵列设计与后处理,200–450,"antenna arrays、pattern analysis"
+EM1-03,电磁-热-结构耦合与多物理,200–450,"coupled simulation interfaces"
+EM1-04,RF/微波系统级建模与链路,150–350,"RF system modeling、S-params"
+EM1-05,逆问题、优化与AI4EM,200–450,"optimization、surrogate、ML"

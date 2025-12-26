@@ -1,0 +1,7 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+AGRI1-01,作物/农业系统模型与仿真,200–450,"crop models、process-based sim"
+AGRI1-02,农业遥感与田间监测,250–600,"remote sensing pipelines、GIS"
+AGRI1-03,农业传感与物联网数据处理,200–450,"sensor/IoT、time-series tools"
+AGRI1-04,育种与基因组选择（工具链）,200–450,"selection tools、genomic prediction"
+AGRI1-05,食品加工与品质检测（含工业视觉）,200–450,"food quality、inspection tooling"
+AGRI1-06,AI4Agri（决策、机器人、优化）,150–350,"planning、optimization、robotics hooks"

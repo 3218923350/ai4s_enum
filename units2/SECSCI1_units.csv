@@ -1,0 +1,5 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+SECSCI1-01,受控环境与可审计执行,200–450,"controlled execution、policy"
+SECSCI1-02,数据共享合规与访问控制（科研场景）,150–350,"consent/policy、access tooling"
+SECSCI1-03,结果可追溯与不可抵赖（审计/签名）,150–350,"signing、attestation"
+SECSCI1-04,科研场景隐私保护与联邦协作,150–350,"federated infra、privacy tools"

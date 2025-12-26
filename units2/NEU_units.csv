@@ -1,0 +1,6 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+NEU2-01,神经元/回路模拟器与建模框架,250–600,"neuron/circuit simulators"
+NEU2-02,Spike数据处理与拟合/解码,200–450,"spike sorting、decoding"
+NEU2-03,可塑性、学习规则与动力学分析,150–350,"plasticity models、dynamics tools"
+NEU2-04,大脑网络/连接组建模与仿真,200–450,"connectome modeling"
+NEU2-05,AI4Neuro（替代模型/推断加速）,150–350,"surrogate、amortized inference"

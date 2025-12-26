@@ -1,0 +1,34 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+CS1-01,数据抽取/清洗/ETL与连接器,250–600,"pipelines、connectors、parsers"
+CS1-02,数据版本与数据集管理,250–600,"dataset registry、DVC类"
+CS1-03,数据湖与表格式存储（列存/湖仓）,200–450,"parquet/iceberg/delta生态"
+CS1-04,元数据目录、血缘与provenance,200–450,"catalog、lineage、metadata"
+CS1-05,流式处理与消息队列（科研数据流）,200–450,"streaming、queue、CDC"
+
+CS2-01,分布式计算框架（批/图/管线）,250–600,"distributed compute frameworks"
+CS2-02,并行与加速编程生态（GPU/MPI）,250–600,"CUDA/ROCm、MPI、OpenMP等"
+CS2-03,作业调度与集群管理（HPC/K8s）,200–450,"schedulers、batch on k8s"
+CS2-04,存储与IO性能优化（并行IO）,200–450,"parallel FS、IO libs、caching"
+CS2-05,性能分析、剖析与调优工具,200–450,"tracing、profilers、tuning"
+
+CS3-01,OLTP/OLAP 与分析型数据库,250–600,"SQL/OLAP engines"
+CS3-02,全文检索与索引（搜索引擎）,200–450,"inverted index、ranking"
+CS3-03,向量数据库与ANN索引,200–450,"vector DB、ANN libs"
+CS3-04,图数据库与图查询/推理,200–450,"graph DB、query engines"
+CS3-05,数据治理、权限与审计（DB侧）,150–350,"RBAC、audit、masking"
+
+CS4-01,构建系统与依赖管理（多语言）,250–600,"build tools、package mgmt"
+CS4-02,CI/CD与制品发布,200–450,"CI pipelines、artifact repos"
+CS4-03,测试、基准与回归框架,200–450,"testing harness、bench harness"
+CS4-04,容器/环境治理与复现（工程侧）,200–450,"container tooling、lockfiles"
+CS4-05,SBOM/许可证/供应链合规工具,200–450,"SBOM、license scan、SCA"
+
+CS5-01,日志/指标/链路追踪（Obs栈）,250–600,"logs/metrics/traces"
+CS5-02,训练/推理监控与漂移检测,200–450,"drift、monitoring、alerts"
+CS5-03,成本/配额/资源治理（FinOps）,150–350,"cost tracking、quota mgmt"
+CS5-04,实验追踪与模型/数据注册,200–450,"tracking、registry、lineage"
+
+CS6-01,沙箱与隔离执行（受控运行）,200–450,"sandbox、isolation、policy"
+CS6-02,身份权限与密钥管理,200–450,"IAM、secrets、RBAC"
+CS6-03,隐私保护与安全计算,200–450,"DP、federated、MPC/TEE"
+CS6-04,供应链安全与漏洞扫描,200–450,"signing、scanning、SLSA"

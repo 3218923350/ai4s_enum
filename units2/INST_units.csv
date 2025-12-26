@@ -1,0 +1,7 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+INST1-01,设备驱动与通信协议（通用）,250–600,"VISA/串口/USB/以太网/OPC等"
+INST1-02,实验编排与自动化采集,200–450,"orchestration、scripting frameworks"
+INST1-03,校准、计量与不确定性记录,150–350,"calibration、metrology tooling"
+INST1-04,数据采集缓存、同步与时间戳,200–450,"buffering、sync、timestamping"
+INST1-05,实验日志、审计与追溯（provenance）,200–450,"ELN hooks、audit trails"
+INST1-06,AI4Instrumentation（自动调参/故障诊断）,150–350,"auto-tuning、diagnostics"

@@ -1,0 +1,7 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+GEOENG1-01,地震数据处理与成像/反演,250–600,"seismic processing、migration"
+GEOENG1-02,储层/地下多相流模拟,250–600,"reservoir simulators、multiphase"
+GEOENG1-03,岩土/地应力与断裂建模,200–450,"geomechanics、fracture modeling"
+GEOENG1-04,井筒/生产系统与完井模拟,150–350,"wellbore/production modeling"
+GEOENG1-05,地下数据管理与可视化,200–450,"subsurface data tools、viz"
+GEOENG1-06,AI4Subsurface（替代模型/反演加速）,150–350,"surrogate、inverse ML"

@@ -27,7 +27,7 @@ def main():
         description="AI4S 工具生态枚举：从 leaf_clusters.csv + units/*.csv 自动生成搜索任务并输出 out/<簇ID>/<单元ID>.json"
     )
     ap.add_argument("--leaf-clusters-csv", default=os.path.join(script_dir, "leaf_clusters.csv"))
-    ap.add_argument("--units-dir", default=os.path.join(script_dir, "units"))
+    ap.add_argument("--units-dir", default=os.path.join(script_dir, "units2"))
     ap.add_argument("--out-root", default=os.path.join(script_dir, "out"))
     ap.add_argument("--leaf", default="", help="指定叶子簇ID（逗号分隔），例如 B1,B2,AI5；为空则需 --all")
     ap.add_argument("--all", action="store_true", help="对 leaf_clusters.csv 中所有叶子簇运行")

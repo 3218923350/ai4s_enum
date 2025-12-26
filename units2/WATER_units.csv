@@ -1,0 +1,7 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+WATER1-01,水文模型与流域仿真,250–600,"hydrology models、calibration"
+WATER1-02,河道/洪涝/城市水力仿真,200–450,"hydraulic models、flood sim"
+WATER1-03,地下水与溶质运移,200–450,"groundwater flow/transport"
+WATER1-04,水资源优化调度与决策支持,200–450,"scheduling、optimization"
+WATER1-05,水质、污染与生态评价,150–350,"water quality modeling"
+WATER1-06,AI4Water（预报/同化/风险）,150–350,"forecasting、DA、risk tools"

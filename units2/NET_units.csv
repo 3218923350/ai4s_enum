@@ -1,0 +1,6 @@
+单元ID,单元名称,目标规模,主要覆盖工具
+NET1-01,大文件传输与断点续传/校验,250–600,"transfer tools、checksums"
+NET1-02,传输加速与广域网优化,200–450,"WAN optimization、proxy"
+NET1-03,网络测量、诊断与可观测性,200–450,"perf tools、tracing、monitor"
+NET1-04,数据同步与分发（镜像/缓存）,200–450,"mirroring、caching、CDN-like"
+NET1-05,安全传输与访问控制（网络侧）,150–350,"secure transfer、auth"
