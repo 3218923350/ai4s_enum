@@ -17,7 +17,7 @@ class EnumConfig:
     # Gemini / OpenAI-compatible（可选）
     gemini_api_key: Optional[str] = None
     gemini_api_base: str = "https://api.gpugeek.com/v1"
-    gemini_model: str = "Vendor2/Gemini-3-Pro"
+    gemini_model: str = "Vendor2/GPT-5.1"
 
 
 def load_config_from_env() -> EnumConfig:
@@ -27,7 +27,7 @@ def load_config_from_env() -> EnumConfig:
         search_base_url=os.getenv("SEARCH_BASE_URL") or "https://www.searchapi.io/",
         gemini_api_key=os.getenv("GEMINI_API_KEY") or None,
         gemini_api_base=os.getenv("GEMINI_API_BASE") or "https://api.gpugeek.com/v1",
-        gemini_model=os.getenv("GEMINI_MODEL") or "Vendor2/Gemini-3-Pro",
+        gemini_model=os.getenv("GEMINI_MODEL") or "Vendor2/GPT-5.1",
     )
 
 
